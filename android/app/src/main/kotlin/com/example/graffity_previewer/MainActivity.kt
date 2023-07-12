@@ -1,4 +1,4 @@
-package com.example.graffity_previewer
+package com.example.graffity_viewer
 
 import io.flutter.embedding.android.FlutterActivity
 

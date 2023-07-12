@@ -1,3 +1,3 @@
-# graffity_previewer
+# graffity_viewer
 
 A new Flutter project.

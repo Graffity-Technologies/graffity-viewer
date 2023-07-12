@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.graffity_previewer">
+    package="com.example.graffity_viewer">
    <application
-        android:label="graffity_previewer"
+        android:label="graffity_viewer"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
