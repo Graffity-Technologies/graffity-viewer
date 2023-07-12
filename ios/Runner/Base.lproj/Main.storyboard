@@ -45,19 +45,6 @@
             </objects>
             <point key="canvasLocation" x="2601" y="18"/>
         </scene>
-        <!--NavAR View Controller-->
-        <scene sceneID="j6e-qj-ZwD">
-            <objects>
-                <navigationController id="r9T-fw-0BE" customClass="NavARViewController" customModule="Runner" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="u2s-Fa-kAQ">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gf1-6v-C5N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1584" y="19"/>
-        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

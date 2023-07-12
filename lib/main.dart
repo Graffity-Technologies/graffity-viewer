@@ -16,25 +16,7 @@ class MainApp extends StatefulWidget {
 class _MainAppState extends State<MainApp> {
 
 
-  static const platform = MethodChannel('samples.flutter.dev/battery');
   static const platformAR = MethodChannel('samples.flutter.dev/navigation');
-
-//Battery
-  String _batteryLevel = 'Unknown battery level.';
-  Future<void> _getBatteryLevel() async {
-    String batteryLevel;
-    try {
-      final int result = await platform.invokeMethod('getBatteryLevel');
-      batteryLevel = 'Battery level at $result % .';
-    } on PlatformException catch (e) {
-      batteryLevel = "Failed to get battery level: '${e.message}'.";
-    }
-
-    setState(() {
-      _batteryLevel = batteryLevel;
-    });
-  }
-
 //AR
   final TextEditingController _textController = TextEditingController();
   String _enteredText = '';
@@ -62,7 +44,7 @@ class _MainAppState extends State<MainApp> {
                 controller: _textController,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
-                  hintText: 'Enter a search term',
+                  hintText: 'Enter your access token',
                 ),
               ),
               const SizedBox(height: 16),
@@ -75,11 +57,6 @@ class _MainAppState extends State<MainApp> {
                 },
                 child: const Text('Show AR'),
               ),
-              ElevatedButton(
-                onPressed: _getBatteryLevel,
-                child: const Text('Get Battery Level'),
-              ),
-              Text(_batteryLevel),
               const SizedBox(height: 20),
               Text(_enteredText)
             ],
