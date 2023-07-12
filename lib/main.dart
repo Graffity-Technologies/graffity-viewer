@@ -14,8 +14,6 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> {
-
-
   static const platformAR = MethodChannel('samples.flutter.dev/navigation');
 //AR
   final TextEditingController _textController = TextEditingController();
@@ -27,10 +25,9 @@ class _MainAppState extends State<MainApp> {
     super.dispose();
   }
 
-   Future<void> _navigateToARViewController(String data) async {
+  Future<void> _navigateToARViewController(String data) async {
     await platformAR.invokeMethod('OpenAR', {'data': data});
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -40,17 +37,24 @@ class _MainAppState extends State<MainApp> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextField(
-                controller: _textController,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Enter your access token',
+              const SizedBox(height: 20),
+              const Text(
+                'AR Preview',
+                style: TextStyle(fontSize: 36.0, fontWeight: FontWeight.bold),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(30.0),
+                child: TextField(
+                  controller: _textController,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Enter your access token',
+                  ),
                 ),
               ),
-              const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () {
-                 setState(() {
+                  setState(() {
                     _enteredText = _textController.text;
                   });
                   _navigateToARViewController(_textController.text);
@@ -58,7 +62,7 @@ class _MainAppState extends State<MainApp> {
                 child: const Text('Show AR'),
               ),
               const SizedBox(height: 20),
-              Text(_enteredText)
+              // Text(_enteredText)
             ],
           ),
         ),
@@ -66,5 +70,3 @@ class _MainAppState extends State<MainApp> {
     );
   }
 }
-
-

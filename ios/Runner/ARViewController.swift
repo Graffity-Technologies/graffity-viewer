@@ -17,10 +17,19 @@ class ARViewController: UIViewController {
         
         // Use the "data" property to display the passed data
         if let data = data {
+            
             let graffityARCloud = GraffityARCloud(accessToken: data)
             let arCloudUIView = ARCloudUIView(service: self.graffityARCloud)
             self.addChild(arCloudUIView)
             self.view.addSubview(arCloudUIView.view)
+            
+            //            let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
+            //            label.text = data
+            //            label.textAlignment = .center
+            //            label.center = view.center
+            //            label.backgroundColor = .orange
+            //            view.backgroundColor = .blue
+            //            view.addSubview(label)
         }
     }
     
