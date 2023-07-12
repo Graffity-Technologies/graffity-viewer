@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "graffity-arcloud-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Graffity-Technologies/graffity-arcloud-ios.git",
+      "state" : {
+        "revision" : "6666140fffb23944beb3371ec885d93b5ad817cb",
+        "version" : "0.10.2"
+      }
+    }
+  ],
+  "version" : 2
+}
