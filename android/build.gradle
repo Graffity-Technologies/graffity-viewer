@@ -15,6 +15,16 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        maven {
+            url 'https://maven.graffity.app/releases'
+            authentication {
+                basic(BasicAuthentication)
+            }
+            credentials {
+                username = "graffity" // Do not change the username.
+                password = "${GRAFFITY_SECRET_TOKEN}" // access token you stored in ~/.gradle/gradle.properties
+            }
+        }
     }
 }
 
