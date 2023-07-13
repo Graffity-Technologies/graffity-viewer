@@ -18,10 +18,16 @@ class ARViewController: UIViewController {
         // Use the "data" property to display the passed data
         if let data = data {
             
-            let graffityARCloud = GraffityARCloud(accessToken: data)
-            let arCloudUIView = ARCloudUIView(service: self.graffityARCloud)
-            self.addChild(arCloudUIView)
-            self.view.addSubview(arCloudUIView.view)
+            // Check if the first three characters of the token are "sk."
+            if data.hasPrefix("sk.") {
+                let graffityARCloud = GraffityARCloud(accessToken: data)
+                let arCloudUIView = ARCloudUIView(service: self.graffityARCloud)
+                self.addChild(arCloudUIView)
+                self.view.addSubview(arCloudUIView.view)
+            } else {
+                // Token is not valid, handle the error or take appropriate actions
+                print("Invalid token")
+            }
             
             //            let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
             //            label.text = data
