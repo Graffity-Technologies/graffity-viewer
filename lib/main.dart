@@ -15,34 +15,45 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> {
-
-final Uri _url = Uri.parse('https://github.com/Graffity-Technologies/graffity-viewer');
- Future<void> _launchUrl() async {
-  if (!await launchUrl(_url)) {
-    throw Exception('Could not launch $_url');
+  final Uri _url =
+      Uri.parse('https://github.com/Graffity-Technologies/graffity-viewer');
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(_url)) {
+      throw Exception('Could not launch $_url');
+    }
   }
-}
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: SafeArea(
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const SizedBox(height: 20),
-                const Text(
-                  'AR Viewer',
-                  style: TextStyle(fontSize: 36.0, fontWeight: FontWeight.bold),
+          child: Stack(
+            children: [
+              const Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(height: 20),
+                    Text(
+                      'AR Viewer',
+                      style: TextStyle(
+                          fontSize: 36.0, fontWeight: FontWeight.bold),
+                    ),
+                    SubmitPage(),
+                  ],
                 ),
-                const SubmitPage(),
-                InkWell(
+              ),
+              Positioned(
+                bottom: 10,
+                width: MediaQuery.of(context)
+                    .size
+                    .width, // Set the width of the Positioned widget to match the screen width
+                child: InkWell(
                   onTap: () {
                     _launchUrl();
                   },
-                  child: const Column(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('Fork here'),
@@ -51,8 +62,8 @@ final Uri _url = Uri.parse('https://github.com/Graffity-Technologies/graffity-vi
                     ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
