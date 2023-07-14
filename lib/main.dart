@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-// import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const MainApp());
@@ -15,21 +14,6 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> {
-  static const platformAR = MethodChannel('samples.flutter.dev/navigation');
-//AR
-  final TextEditingController _textController = TextEditingController();
-  String _enteredText = '';
-
-  @override
-  void dispose() {
-    _textController.dispose();
-    super.dispose();
-  }
-
-  Future<void> _navigateToARViewController(String data) async {
-    await platformAR.invokeMethod('OpenAR', {'data': data});
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -44,30 +28,10 @@ class _MainAppState extends State<MainApp> {
                   'AR Viewer',
                   style: TextStyle(fontSize: 36.0, fontWeight: FontWeight.bold),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(30.0),
-                  child: TextField(
-                    controller: _textController,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: 'Enter your access token',
-                    ),
-                  ),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      _enteredText = _textController.text;
-                    });
-                    _navigateToARViewController(_textController.text);
-                  },
-                  child: const Text('Show AR'),
-                ),
-                const SizedBox(height: 20),
-                // Text(_enteredText)
-                const InkWell(
-                  onTap: dadasdsa,
-                  child: Column(
+                const SubmitPage(),
+                InkWell(
+                  onTap: () {},
+                  child: const Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('Fork here'),
@@ -85,12 +49,105 @@ class _MainAppState extends State<MainApp> {
   }
 }
 
-dadasdsa(){}
+class SubmitPage extends StatelessWidget {
+  const SubmitPage({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(30.0),
+      child: TextSubmitWidget(onSubmit: (value) => print(value)),
+    );
+  }
+}
 
+class TextSubmitWidget extends StatefulWidget {
+  const TextSubmitWidget({Key? key, required this.onSubmit}) : super(key: key);
+  final ValueChanged<String> onSubmit;
 
-// final Uri _url = Uri.parse('https://github.com/Graffity-Technologies/graffity-viewer');
-// Future<void> _launchUrl() async {
-//   if (!await launchUrl(_url)) {
-//     throw Exception('Could not launch $_url');
-//   }
-// }
+  @override
+  State<TextSubmitWidget> createState() => _TextSubmitWidgetState();
+}
+
+class _TextSubmitWidgetState extends State<TextSubmitWidget> {
+  final _controller = TextEditingController();
+  bool _submitted = false;
+
+  static const platformAR = MethodChannel('samples.flutter.dev/navigation');
+  Future<void> _navigateToARViewController(String data) async {
+    await platformAR.invokeMethod('OpenAR', {'data': data});
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  String? get _errorText {
+    final text = _controller.value.text;
+    if (text.isEmpty) {
+      return 'Can\'t be empty';
+    }
+
+    if (!text.startsWith('sk.')) {
+      return 'Invalid Token';
+    }
+    // if (text.length < 4) {
+    //   return 'Too short';
+    // }
+    return null;
+  }
+
+  void _submit() {
+    setState(() => _submitted = true);
+    final enteredValue = _controller.value.text;
+    if (_errorText == null && enteredValue.startsWith('sk.')) {
+      widget.onSubmit(_controller.value.text);
+      _navigateToARViewController(_controller.text);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ValueListenableBuilder(
+      // Note: pass _controller to the animation argument
+      valueListenable: _controller,
+      builder: (context, TextEditingValue value, __) {
+        // this entire widget tree will rebuild every time
+        // the controller value changes
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            SizedBox(
+              height: 80,
+              child: TextField(
+                controller: _controller,
+                decoration: InputDecoration(
+                  labelText: 'Enter your Token',
+                  // the errorText getter *depends* on _controller
+                  errorText: _submitted ? _errorText : null,
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            SizedBox(
+              height: 40,
+              child: ElevatedButton(
+                // the errorText getter *depends* on _controller
+                onPressed: _controller.value.text.isNotEmpty ? _submit : null,
+                child: Text(
+                  'Submit',
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline6!
+                      .copyWith(color: Colors.white),
+                ),
+              ),
+            )
+          ],
+        );
+      },
+    );
+  }
+}

@@ -18,16 +18,11 @@ class ARViewController: UIViewController {
         // Use the "data" property to display the passed data
         if let data = data {
             
-            // Check if the first three characters of the token are "sk."
-            if data.hasPrefix("sk.") {
                 let graffityARCloud = GraffityARCloud(accessToken: data)
                 let arCloudUIView = ARCloudUIView(service: self.graffityARCloud)
                 self.addChild(arCloudUIView)
                 self.view.addSubview(arCloudUIView.view)
-            } else {
-                // Token is not valid, handle the error or take appropriate actions
-                print("Invalid token")
-            }
+            } 
             
             //            let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
             //            label.text = data
@@ -38,17 +33,3 @@ class ARViewController: UIViewController {
             //            view.addSubview(label)
         }
     }
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-}
