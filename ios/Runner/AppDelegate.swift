@@ -18,7 +18,7 @@ import Flutter
             // self.window.makeKeyAndVisible()
             
             
-            // let ARChannel = FlutterMethodChannel(name: "samples.flutter.dev/navigation", binaryMessenger: controllerAR.binaryMessenger)
+            // let ARChannel = FlutterMethodChannel(name: "app.graffity.ar-viewer/ar", binaryMessenger: controllerAR.binaryMessenger)
             // ARChannel.setMethodCallHandler { [weak self] (call: FlutterMethodCall, result: @escaping FlutterResult) -> Void in
             //     if call.method == "OpenAR" {
             //         if let args = call.arguments as? Dictionary<String, Any>,

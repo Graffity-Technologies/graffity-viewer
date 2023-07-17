@@ -125,7 +125,7 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
   final _controller = TextEditingController();
   bool _submitted = false;
 
-  static const platformAR = MethodChannel('samples.flutter.dev/navigation');
+  static const platformAR = MethodChannel('app.graffity.ar-viewer/ar');
   Future<void> _navigateToARViewController(String data) async {
     await platformAR.invokeMethod('OpenAR', {'data': data});
   }
