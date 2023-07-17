@@ -69,8 +69,6 @@ class _MainAppState extends State<MainApp> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
                           Text('Where to get a project access token?'),
-                          // SizedBox(width: 5),
-                          // Icon(Icons.code),
                         ],
                       ),
                     ),
@@ -86,7 +84,10 @@ class _MainAppState extends State<MainApp> {
                         children: const [
                           Text('Clone this app from GitHub'),
                           SizedBox(width: 5),
-                          Icon(Icons.code),
+                          Icon(
+                            Icons.code,
+                            size: 16,
+                          ),
                         ],
                       ),
                     ),
@@ -144,9 +145,7 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
     if (!text.startsWith('sk.')) {
       return 'Invalid Token';
     }
-    // if (text.length < 4) {
-    //   return 'Too short';
-    // }
+
     return null;
   }
 
@@ -162,11 +161,8 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
-      // Note: pass _controller to the animation argument
       valueListenable: _controller,
       builder: (context, TextEditingValue value, __) {
-        // this entire widget tree will rebuild every time
-        // the controller value changes
         return Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -177,7 +173,6 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
                 controller: _controller,
                 decoration: InputDecoration(
                   labelText: 'Enter project access token (sk...)',
-                  // the errorText getter *depends* on _controller
                   errorText: _submitted ? _errorText : null,
                 ),
               ),
@@ -186,7 +181,6 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
             SizedBox(
               height: 40,
               child: ElevatedButton(
-                // the errorText getter *depends* on _controller
                 onPressed: _controller.value.text.isNotEmpty ? _submit : null,
                 child: Text(
                   'Submit',
