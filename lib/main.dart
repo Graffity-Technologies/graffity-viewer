@@ -15,11 +15,20 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> {
-  final Uri _url =
+  final Uri _githubCloneUrl =
       Uri.parse('https://github.com/Graffity-Technologies/graffity-viewer');
-  Future<void> _launchUrl() async {
-    if (!await launchUrl(_url)) {
-      throw Exception('Could not launch $_url');
+  final Uri _docTokenUrl = Uri.parse(
+      'https://developers.graffity.tech/quick-start/graffity-console#create-access-token');
+
+  Future<void> _launchViewerGithubUrl() async {
+    if (!await launchUrl(_githubCloneUrl)) {
+      throw Exception('Could not launch $_githubCloneUrl');
+    }
+  }
+
+  Future<void> _launchDocTokenUrl() async {
+    if (!await launchUrl(_docTokenUrl)) {
+      throw Exception('Could not launch $_docTokenUrl');
     }
   }
 
@@ -48,21 +57,41 @@ class _MainAppState extends State<MainApp> {
                 ],
               ),
               const SubmitContainer(),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 16),
-                child: InkWell(
-                  onTap: () {
-                    _launchUrl();
-                  },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Text('Clone this app from GitHub'),
-                      SizedBox(width: 5),
-                      Icon(Icons.code),
-                    ],
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 12),
+                    child: InkWell(
+                      onTap: () {
+                        _launchDocTokenUrl();
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Text('Where to get a project access token?'),
+                          // SizedBox(width: 5),
+                          // Icon(Icons.code),
+                        ],
+                      ),
+                    ),
                   ),
-                ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 16),
+                    child: InkWell(
+                      onTap: () {
+                        _launchViewerGithubUrl();
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Text('Clone this app from GitHub'),
+                          SizedBox(width: 5),
+                          Icon(Icons.code),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
@@ -77,7 +106,7 @@ class SubmitContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(30.0),
+      padding: const EdgeInsets.symmetric(horizontal: 32),
       child: TextSubmitWidget(onSubmit: (value) => print(value)),
     );
   }
@@ -147,7 +176,7 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
               child: TextField(
                 controller: _controller,
                 decoration: InputDecoration(
-                  labelText: 'Enter your project access token',
+                  labelText: 'Enter project access token (sk...)',
                   // the errorText getter *depends* on _controller
                   errorText: _submitted ? _errorText : null,
                 ),
