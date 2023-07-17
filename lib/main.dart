@@ -28,37 +28,38 @@ class _MainAppState extends State<MainApp> {
     return MaterialApp(
       home: Scaffold(
         body: SafeArea(
-          child: Stack(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(height: 20),
-                    Text(
-                      'AR Viewer',
-                      style: TextStyle(
-                          fontSize: 36.0, fontWeight: FontWeight.bold),
-                    ),
-                    SubmitPage(),
-                  ],
-                ),
+              Column(
+                children: const [
+                  SizedBox(height: 32),
+                  Image(
+                    image: AssetImage('assets/images/graffity_viewer_logo.png'),
+                    width: 200,
+                    fit: BoxFit.cover,
+                  ),
+                  SizedBox(height: 16),
+                  Text(
+                    'AR Viewer for Graffity Console',
+                    style:
+                        TextStyle(fontSize: 14.0, fontWeight: FontWeight.w300),
+                  ),
+                ],
               ),
-              Positioned(
-                bottom: 10,
-                width: MediaQuery.of(context)
-                    .size
-                    .width, // Set the width of the Positioned widget to match the screen width
+              const SubmitContainer(),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 16),
                 child: InkWell(
                   onTap: () {
                     _launchUrl();
                   },
-                  child: const Row(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text('Fork here'),
-                      Icon(Icons.code),
+                    children: const [
+                      Text('Clone this app from GitHub'),
                       SizedBox(width: 5),
+                      Icon(Icons.code),
                     ],
                   ),
                 ),
@@ -71,8 +72,8 @@ class _MainAppState extends State<MainApp> {
   }
 }
 
-class SubmitPage extends StatelessWidget {
-  const SubmitPage({Key? key}) : super(key: key);
+class SubmitContainer extends StatelessWidget {
+  const SubmitContainer({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -146,13 +147,13 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
               child: TextField(
                 controller: _controller,
                 decoration: InputDecoration(
-                  labelText: 'Enter your Token',
+                  labelText: 'Enter your project access token',
                   // the errorText getter *depends* on _controller
                   errorText: _submitted ? _errorText : null,
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 12),
             SizedBox(
               height: 40,
               child: ElevatedButton(
@@ -162,7 +163,7 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
                   'Submit',
                   style: Theme.of(context)
                       .textTheme
-                      .headline6!
+                      .bodyMedium!
                       .copyWith(color: Colors.white),
                 ),
               ),
