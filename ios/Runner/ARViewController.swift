@@ -16,12 +16,6 @@ class ARViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Create a new alert
-        var dialogMessage = UIAlertController(title: arMode, message: arMode, preferredStyle: .alert)
-
-        // Present alert to user
-        self.present(dialogMessage, animated: true, completion: nil)
-        
         // Use the "accessToken" property to display the passed data
         if let accessToken = accessToken {
             
