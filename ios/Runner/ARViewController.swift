@@ -10,10 +10,17 @@ import GraffityARCloudService
 
 class ARViewController: UIViewController {
     var accessToken: String?
+    var arMode: String?
     let graffityARCloud = GraffityARCloud(accessToken: "YOUR_ACCESS_TOKEN")
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Create a new alert
+        var dialogMessage = UIAlertController(title: arMode, message: arMode, preferredStyle: .alert)
+
+        // Present alert to user
+        self.present(dialogMessage, animated: true, completion: nil)
         
         // Use the "accessToken" property to display the passed data
         if let accessToken = accessToken {

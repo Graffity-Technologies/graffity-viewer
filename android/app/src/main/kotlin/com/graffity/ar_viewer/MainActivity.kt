@@ -20,6 +20,8 @@ class MainActivity: FlutterActivity() {
                 call, result ->
             if (call.method == "OpenAR") {
                 val accessToken = call.argument<String>("accessToken")
+                val arMode = call.argument<String>("arMode")
+                println(arMode)
 //                val intent = Intent(this, ArActivity::class.java) //Start your special native stuff
 //                startActivity(intent)
                 val intent = Intent(this, ARCloudActivity::class.java)
