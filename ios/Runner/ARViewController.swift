@@ -9,16 +9,16 @@ import UIKit
 import GraffityARCloudService
 
 class ARViewController: UIViewController {
-    var data: String?
+    var accessToken: String?
     let graffityARCloud = GraffityARCloud(accessToken: "YOUR_ACCESS_TOKEN")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Use the "data" property to display the passed data
-        if let data = data {
+        // Use the "accessToken" property to display the passed data
+        if let accessToken = accessToken {
             
-                let graffityARCloud = GraffityARCloud(accessToken: data)
+                let graffityARCloud = GraffityARCloud(accessToken: accessToken)
                 let arCloudUIView = ARCloudUIView(service: self.graffityARCloud)
                 self.addChild(arCloudUIView)
                 self.view.addSubview(arCloudUIView.view)

@@ -126,9 +126,15 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
   bool _submitted = false;
 
   static const platformAR = MethodChannel('app.graffity.ar-viewer/ar');
-  Future<void> _navigateToARViewController(String data) async {
-    await platformAR.invokeMethod('OpenAR', {'data': data});
+  Future<void> _navigateToARViewController(String accessToken) async {
+    await platformAR.invokeMethod('OpenAR', {'accessToken': accessToken});
   }
+
+  static const List<String> arMode = <String>[
+    'World & Image Anchor',
+    'Face Anchor'
+  ];
+  String? defaultArMode = arMode.first; // Default selected option
 
   @override
   void dispose() {
@@ -175,6 +181,24 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
                   labelText: 'Enter project access token (sk...)',
                   errorText: _submitted ? _errorText : null,
                 ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 12),
+              child: DropdownButton<String>(
+                isExpanded:  true,
+                value: defaultArMode,
+                onChanged: (String? newValue) {
+                  setState(() {
+                    defaultArMode = newValue;
+                  });
+                },
+                items: arMode.map((arMode) {
+                  return DropdownMenuItem(
+                    value: arMode,
+                    child: Text(arMode),
+                  );
+                }).toList(),
               ),
             ),
             const SizedBox(height: 12),

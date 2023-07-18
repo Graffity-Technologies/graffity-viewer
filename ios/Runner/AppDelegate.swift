@@ -25,9 +25,9 @@ import Flutter
         ARChannel.setMethodCallHandler { [weak self] (call: FlutterMethodCall, result: @escaping FlutterResult) -> Void in
             if call.method == "OpenAR" {
                 if let args = call.arguments as? Dictionary<String, Any>,
-                    let data = args["data"] as? String {
+                    let accessToken = args["accessToken"] as? String {
                     let arVC = ARViewController()
-                    arVC.data = data
+                    arVC.accessToken = accessToken
                     self?.navigationController?.setNavigationBarHidden(false, animated: true)
                     self?.navigationController?.pushViewController(arVC, animated: true)
                 }
