@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -146,11 +147,17 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
     });
   }
 
-  static const List<String> arMode = <String>[
-    'World & Image Anchor',
-    'Face Anchor'
-  ];
+  static List<String> arMode = <String>['World & Image Anchor'];
   String? defaultArMode = arMode.first; // Default ArMode option
+
+  @override
+  void initState() {
+    super.initState();
+
+    if (Platform.isIOS) {
+      arMode.add('Face Anchor');
+    }
+  }
 
   @override
   void dispose() {
