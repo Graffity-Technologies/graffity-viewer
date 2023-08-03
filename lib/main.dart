@@ -19,6 +19,7 @@ class _MainAppState extends State<MainApp> {
       Uri.parse('https://github.com/Graffity-Technologies/graffity-viewer');
   final Uri _docTokenUrl = Uri.parse(
       'https://developers.graffity.tech/quick-start/graffity-console#create-access-token');
+  final Uri _consoleUrl = Uri.parse("https://console.graffity.tech");
 
   Future<void> _launchViewerGithubUrl() async {
     if (!await launchUrl(_githubCloneUrl)) {
@@ -32,6 +33,12 @@ class _MainAppState extends State<MainApp> {
     }
   }
 
+  Future<void> _launchConsoleUrl() async {
+    if (!await launchUrl(_consoleUrl)) {
+      throw Exception('Could not launch $_consoleUrl');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -41,18 +48,23 @@ class _MainAppState extends State<MainApp> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
-                children: const [
-                  SizedBox(height: 32),
-                  Image(
+                children: [
+                  const SizedBox(height: 32),
+                  const Image(
                     image: AssetImage('assets/images/graffity_viewer_logo.png'),
                     width: 200,
                     fit: BoxFit.cover,
                   ),
-                  SizedBox(height: 16),
-                  Text(
-                    'AR Viewer for Graffity Console',
-                    style:
-                        TextStyle(fontSize: 14.0, fontWeight: FontWeight.w300),
+                  const SizedBox(height: 16),
+                  InkWell(
+                    onTap: () {
+                      _launchConsoleUrl();
+                    },
+                    child: const Text(
+                      'AR Viewer for Graffity Console',
+                      style: TextStyle(
+                          fontSize: 14.0, fontWeight: FontWeight.w300),
+                    ),
                   ),
                 ],
               ),
