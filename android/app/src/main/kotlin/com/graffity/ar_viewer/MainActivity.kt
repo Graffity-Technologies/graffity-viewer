@@ -21,15 +21,17 @@ class MainActivity: FlutterActivity() {
             if (call.method == "OpenAR") {
                 val accessToken = call.argument<String>("accessToken")
                 val arMode = call.argument<String>("arMode")
-                println(arMode)
-//                val intent = Intent(this, ArActivity::class.java) //Start your special native stuff
-//                startActivity(intent)
+                var isFrontCamera = false
+                if (arMode == "Face Anchor") {
+                    isFrontCamera = true
+                }
                 val intent = Intent(this, ARCloudActivity::class.java)
 //                intent.putExtra("OnSceneTouchedListener", OnSceneTouchedListener(onSceneTouchedAction))
-                intent.putExtra("PointCloudMode", true)
+                intent.putExtra("PointCloudMode", false)
+                intent.putExtra("FrontCameraMode", isFrontCamera)
                 intent.putExtra("AccessToken", accessToken)
                 startActivity(intent)
-                result.success("Success!!!")
+                result.success("Success")
             } else {
                 result.notImplemented()
             }
