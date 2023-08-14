@@ -1,3 +1,8 @@
+## Graffity Viewer
+We create this application on top of Flutter and communicate with Graffity AR native SDK with [Flutter Bridge](https://docs.flutter.dev/platform-integration/platform-channels). You can fork this repo to custom with your own style.
+
+![Alt text](cover.png "Cover image")
+
 ## Build & Distribute
 ### iOS
 0. Reference https://docs.flutter.dev/deployment/ios
