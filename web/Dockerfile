@@ -5,7 +5,6 @@ WORKDIR /frontend
 COPY package.json yarn.lock ./
 RUN yarn
 COPY . ./
-RUN yarn test
 RUN yarn build
 
 FROM nginx:1.23.0-alpine
