@@ -1,0 +1,14 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.graffity.ar_viewer",
+            "sha256_cert_fingerprints": [
+                "17:F9:2B:BD:55:F1:A3:5B:A0:69:F1:B9:2C:31:27:F0:BD:A0:BE:E4:A4:30:00:44:F2:A7:12:09:65:FB:C5:59"
+            ]
+        }
+    }
+]
