@@ -4,13 +4,29 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:go_router/go_router.dart';
 
 final _controller = TextEditingController();
-void main() {
-  runApp(const MaterialApp(
-    home: MainApp(),
-  ));
-}
+
+void main() => runApp(MaterialApp.router(routerConfig: router));
+
+/// This handles '/' and '/details'.
+final router = GoRouter(
+  routes: [
+    GoRoute(
+      path: '/',
+      builder: (_, __) => const MainApp(),
+      routes: [
+        GoRoute(
+          path: 'details',
+          builder: (_, __) => Scaffold(
+            appBar: AppBar(title: const Text('Details Screen')),
+          ),
+        ),
+      ],
+    ),
+  ],
+);
 
 class MainApp extends StatefulWidget {
   const MainApp({Key? key}) : super(key: key);
@@ -158,6 +174,8 @@ class _MainAppState extends State<MainApp> {
 class QRCodeScannerScreen extends StatelessWidget {
   final MobileScannerController cameraController = MobileScannerController();
 
+  QRCodeScannerScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -207,17 +225,19 @@ class QRCodeScannerScreen extends StatelessWidget {
               final Uint8List? image = capture.image;
               for (final barcode in barcodes) {
                 final scannedText = barcode.rawValue;
-                if (scannedText!
-                    .startsWith('https://viewer.graffity.app/ar/')) {
+                if (scannedText == null) {
+                  continue; // Skip this if scannedText is null
+                }
+                if (scannedText.startsWith('https://viewer.graffity.app/ar/')) {
                   debugPrint('Barcode found! $scannedText');
                   Navigator.pop(
                       context, scannedText); // Return the scanned text
                 } else {
-                  // Show an error message for invalid token
+                  // Show an error message for an invalid token
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text('Invalid Token: $scannedText'),
-                      duration: Duration(seconds: 2),
+                      duration: const Duration(seconds: 2),
                     ),
                   );
                 }
