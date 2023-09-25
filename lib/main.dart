@@ -3,10 +3,30 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:go_router/go_router.dart';
 
-void main() {
-  runApp(const MainApp());
-}
+final _controller = TextEditingController();
+
+void main() => runApp(MaterialApp.router(routerConfig: router));
+
+/// This handles '/' and '/details'.
+final router = GoRouter(
+  routes: [
+    GoRoute(
+      path: '/',
+      builder: (_, __) => const MainApp(),
+      routes: [
+        GoRoute(
+          path: 'details',
+          builder: (_, __) => Scaffold(
+            appBar: AppBar(title: const Text('Details Screen')),
+          ),
+        ),
+      ],
+    ),
+  ],
+);
 
 class MainApp extends StatefulWidget {
   const MainApp({Key? key}) : super(key: key);
@@ -37,6 +57,18 @@ class _MainAppState extends State<MainApp> {
   Future<void> _launchConsoleUrl() async {
     if (!await launchUrl(_consoleUrl)) {
       throw Exception('Could not launch $_consoleUrl');
+    }
+  }
+
+  Future<void> _launchQRCodeScanner() async {
+    final scannedText = await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => QRCodeScannerScreen()),
+    );
+
+    if (scannedText != null) {
+      // Handle the scanned text, e.g., update a text field
+      _controller.text = scannedText;
     }
   }
 
@@ -76,11 +108,35 @@ class _MainAppState extends State<MainApp> {
                     padding: const EdgeInsets.only(bottom: 12),
                     child: InkWell(
                       onTap: () {
+                        _launchQRCodeScanner(); // Call the QR code scanner screen
+                      },
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons
+                              .camera_alt), // Add a camera emoji using Icon widget
+                          SizedBox(
+                              width:
+                                  8), // Add some space between the emoji and text
+                          Text(
+                            'Mobile Scanner',
+                            style: TextStyle(
+                              fontSize: 18, // Increase the font size as desired
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 12),
+                    child: InkWell(
+                      onTap: () {
                         _launchDocTokenUrl();
                       },
-                      child: Row(
+                      child: const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
+                        children: [
                           Text('Where to get a project access token?'),
                         ],
                       ),
@@ -92,9 +148,9 @@ class _MainAppState extends State<MainApp> {
                       onTap: () {
                         _launchViewerGithubUrl();
                       },
-                      child: Row(
+                      child: const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
+                        children: [
                           Text('Clone this app from GitHub'),
                           SizedBox(width: 5),
                           Icon(
@@ -110,6 +166,95 @@ class _MainAppState extends State<MainApp> {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class QRCodeScannerScreen extends StatelessWidget {
+  final MobileScannerController cameraController = MobileScannerController();
+
+  QRCodeScannerScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Mobile Scanner'),
+        actions: [
+          IconButton(
+            color: Colors.white,
+            icon: ValueListenableBuilder(
+              valueListenable: cameraController.torchState,
+              builder: (context, state, child) {
+                switch (state as TorchState) {
+                  case TorchState.off:
+                    return const Icon(Icons.flash_off, color: Colors.grey);
+                  case TorchState.on:
+                    return const Icon(Icons.flash_on, color: Colors.yellow);
+                }
+              },
+            ),
+            iconSize: 32.0,
+            onPressed: () => cameraController.toggleTorch(),
+          ),
+          IconButton(
+            color: Colors.white,
+            icon: ValueListenableBuilder(
+              valueListenable: cameraController.cameraFacingState,
+              builder: (context, state, child) {
+                switch (state as CameraFacing) {
+                  case CameraFacing.front:
+                    return const Icon(Icons.camera_front);
+                  case CameraFacing.back:
+                    return const Icon(Icons.camera_rear);
+                }
+              },
+            ),
+            iconSize: 32.0,
+            onPressed: () => cameraController.switchCamera(),
+          ),
+        ],
+      ),
+      body: Stack(
+        children: [
+          MobileScanner(
+            controller: cameraController,
+            onDetect: (capture) {
+              final List<Barcode> barcodes = capture.barcodes;
+              final Uint8List? image = capture.image;
+              for (final barcode in barcodes) {
+                final scannedText = barcode.rawValue;
+                if (scannedText == null) {
+                  continue; // Skip this if scannedText is null
+                }
+                if (scannedText.startsWith('https://viewer.graffity.app/ar/')) {
+                  debugPrint('Barcode found! $scannedText');
+                  Navigator.pop(
+                      context, scannedText); // Return the scanned text
+                } else {
+                  // Show an error message for an invalid token
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Invalid Token: $scannedText'),
+                      duration: const Duration(seconds: 2),
+                    ),
+                  );
+                }
+              }
+            },
+          ),
+          Center(
+            child: Container(
+              width: 200.0, // Adjust the width of the scan window as needed
+              height: 200.0, // Adjust the height of the scan window as needed
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.green, width: 2.0),
+                borderRadius: BorderRadius.circular(16.0),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -135,7 +280,6 @@ class TextSubmitWidget extends StatefulWidget {
 }
 
 class _TextSubmitWidgetState extends State<TextSubmitWidget> {
-  final _controller = TextEditingController();
   bool _submitted = false;
 
   static const platformAR = MethodChannel('app.graffity.ar-viewer/ar');
@@ -171,7 +315,7 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
       return 'Can\'t be empty';
     }
 
-    if (!text.startsWith('sk.')) {
+    if (!text.startsWith('https://viewer.graffity.app/ar/')) {
       return 'Invalid Token';
     }
 
@@ -181,7 +325,8 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
   void _submit() {
     setState(() => _submitted = true);
     final enteredValue = _controller.value.text;
-    if (_errorText == null && enteredValue.startsWith('sk.')) {
+    if (_errorText == null &&
+        enteredValue.startsWith('https://viewer.graffity.app/ar/')) {
       widget.onSubmit(_controller.value.text);
       _navigateToARViewController(_controller.text, defaultArMode!);
     }
@@ -201,7 +346,7 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
               child: TextField(
                 controller: _controller,
                 decoration: InputDecoration(
-                  labelText: 'Enter project access token (sk...)',
+                  labelText: 'Enter project access token',
                   errorText: _submitted ? _errorText : null,
                 ),
               ),

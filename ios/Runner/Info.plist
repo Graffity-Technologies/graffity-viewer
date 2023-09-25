@@ -29,9 +29,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>App needs a camera to enable AR scanning</string>
+	<string>App needs a camera to scan QR codes and enable AR scanning</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>App needs a location to start AR session accurately</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app needs photos access to get QR code from photo library</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
