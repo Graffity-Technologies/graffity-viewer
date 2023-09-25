@@ -7,6 +7,7 @@ import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:go_router/go_router.dart';
 
 final _controller = TextEditingController();
+const urlPrefixToken = "https://viewer.graffity.app/ar/";
 
 void main() => runApp(MaterialApp.router(routerConfig: router));
 
@@ -228,7 +229,7 @@ class QRCodeScannerScreen extends StatelessWidget {
                 if (scannedText == null) {
                   continue; // Skip this if scannedText is null
                 }
-                if (scannedText.startsWith('https://viewer.graffity.app/ar/')) {
+                if (scannedText.startsWith(urlPrefixToken)) {
                   debugPrint('Barcode found! $scannedText');
                   Navigator.pop(
                       context, scannedText); // Return the scanned text
@@ -315,7 +316,7 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
       return 'Can\'t be empty';
     }
 
-    if (!text.startsWith('https://viewer.graffity.app/ar/')) {
+    if (!text.startsWith(urlPrefixToken)) {
       return 'Invalid Token';
     }
 
@@ -326,7 +327,7 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
     setState(() => _submitted = true);
     final enteredValue = _controller.value.text;
     if (_errorText == null &&
-        enteredValue.startsWith('https://viewer.graffity.app/ar/')) {
+        enteredValue.startsWith(urlPrefixToken)) {
       widget.onSubmit(_controller.value.text);
       _navigateToARViewController(_controller.text, defaultArMode!);
     }
