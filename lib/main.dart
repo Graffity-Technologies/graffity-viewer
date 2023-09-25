@@ -61,18 +61,6 @@ class _MainAppState extends State<MainApp> {
     }
   }
 
-  Future<void> _launchQRCodeScanner() async {
-    final scannedText = await Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => QRCodeScannerScreen()),
-    );
-
-    if (scannedText != null) {
-      // Handle the scanned text, e.g., update a text field
-      _controller.text = scannedText;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -105,30 +93,6 @@ class _MainAppState extends State<MainApp> {
               const SubmitContainer(),
               Column(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 12),
-                    child: InkWell(
-                      onTap: () {
-                        _launchQRCodeScanner(); // Call the QR code scanner screen
-                      },
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons
-                              .camera_alt), // Add a camera emoji using Icon widget
-                          SizedBox(
-                              width:
-                                  8), // Add some space between the emoji and text
-                          Text(
-                            'Mobile Scanner',
-                            style: TextStyle(
-                              fontSize: 18, // Increase the font size as desired
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 12),
                     child: InkWell(
@@ -172,58 +136,26 @@ class _MainAppState extends State<MainApp> {
   }
 }
 
-class QRCodeScannerScreen extends StatelessWidget {
-  final MobileScannerController cameraController = MobileScannerController();
+class QRCodeScannerScreen extends StatefulWidget {
+  const QRCodeScannerScreen({Key? key}) : super(key: key);
 
-  QRCodeScannerScreen({super.key});
+  @override
+  QRCodeScannerScreenState createState() => QRCodeScannerScreenState();
+}
+
+class QRCodeScannerScreenState extends State<QRCodeScannerScreen> {
+  final MobileScannerController cameraController = MobileScannerController();
+  String? errorMessage;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Mobile Scanner'),
-        actions: [
-          IconButton(
-            color: Colors.white,
-            icon: ValueListenableBuilder(
-              valueListenable: cameraController.torchState,
-              builder: (context, state, child) {
-                switch (state as TorchState) {
-                  case TorchState.off:
-                    return const Icon(Icons.flash_off, color: Colors.grey);
-                  case TorchState.on:
-                    return const Icon(Icons.flash_on, color: Colors.yellow);
-                }
-              },
-            ),
-            iconSize: 32.0,
-            onPressed: () => cameraController.toggleTorch(),
-          ),
-          IconButton(
-            color: Colors.white,
-            icon: ValueListenableBuilder(
-              valueListenable: cameraController.cameraFacingState,
-              builder: (context, state, child) {
-                switch (state as CameraFacing) {
-                  case CameraFacing.front:
-                    return const Icon(Icons.camera_front);
-                  case CameraFacing.back:
-                    return const Icon(Icons.camera_rear);
-                }
-              },
-            ),
-            iconSize: 32.0,
-            onPressed: () => cameraController.switchCamera(),
-          ),
-        ],
-      ),
       body: Stack(
         children: [
           MobileScanner(
             controller: cameraController,
             onDetect: (capture) {
               final List<Barcode> barcodes = capture.barcodes;
-              final Uint8List? image = capture.image;
               for (final barcode in barcodes) {
                 final scannedText = barcode.rawValue;
                 if (scannedText == null) {
@@ -234,25 +166,64 @@ class QRCodeScannerScreen extends StatelessWidget {
                   Navigator.pop(
                       context, scannedText); // Return the scanned text
                 } else {
-                  // Show an error message for an invalid token
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text('Invalid Token: $scannedText'),
-                      duration: const Duration(seconds: 2),
-                    ),
-                  );
+                  // Set the error message for an invalid token
+                  setState(() {
+                    errorMessage = 'Invalid Token: $scannedText';
+                  });
                 }
               }
             },
           ),
+          Positioned.fill(
+            child: Container(
+              color: Colors.black.withOpacity(0.4), // Darken the entire screen
+            ),
+          ),
           Center(
             child: Container(
-              width: 200.0, // Adjust the width of the scan window as needed
-              height: 200.0, // Adjust the height of the scan window as needed
+              width: 300.0, // Adjust the width of the scan window as needed
+              height: 300.0, // Adjust the height of the scan window as needed
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.green, width: 2.0),
+                color:
+                    Colors.white.withOpacity(0.4), // Darken the entire screen
                 borderRadius: BorderRadius.circular(16.0),
+                border: Border.all(
+                  color: Colors.white,
+                  width: 2.0, // Adjust the width of the white border line
+                ),
               ),
+            ),
+          ),
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              color: Colors.black,
+              height: 200, // Increase the height as needed
+              child: Center(
+                child: Text(
+                  errorMessage ??
+                      '', // Display the error message if it's not null
+                  textAlign: TextAlign.center, // Center align the text
+                  style: const TextStyle(
+                    color: Colors.grey, // Set the color for the error message
+                    fontSize: 16,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 50,
+            left: 0,
+            child: IconButton(
+              icon: const Icon(Icons.close, color: Colors.white),
+              iconSize: 40, // Increase the size of the X button
+              onPressed: () {
+                // Handle the close button action here
+                Navigator.pop(context);
+              },
             ),
           ),
         ],
@@ -326,10 +297,21 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
   void _submit() {
     setState(() => _submitted = true);
     final enteredValue = _controller.value.text;
-    if (_errorText == null &&
-        enteredValue.startsWith(urlPrefixToken)) {
+    if (_errorText == null && enteredValue.startsWith(urlPrefixToken)) {
       widget.onSubmit(_controller.value.text);
       _navigateToARViewController(_controller.text, defaultArMode!);
+    }
+  }
+
+  Future<void> _launchQRCodeScanner() async {
+    final scannedText = await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => QRCodeScannerScreen()),
+    );
+
+    if (scannedText != null) {
+      // Handle the scanned text, e.g., update a text field
+      _controller.text = scannedText;
     }
   }
 
@@ -376,14 +358,45 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
               child: ElevatedButton(
                 onPressed: _controller.value.text.isNotEmpty ? _submit : null,
                 child: Text(
-                  'Submit',
+                  'Launch AR',
                   style: Theme.of(context)
                       .textTheme
                       .bodyMedium!
                       .copyWith(color: Colors.white),
                 ),
               ),
-            )
+            ),
+            const SizedBox(height: 12),
+            const Divider(
+                color: Colors.grey, thickness: 1), // Insert a horizontal line
+            const SizedBox(height: 12),
+            SizedBox(
+              height: 40,
+              child: ElevatedButton(
+                onPressed: () async {
+                  await _launchQRCodeScanner();
+                },
+                style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.black,
+                  backgroundColor:
+                      const Color.fromARGB(228, 255, 255, 255), // Text color
+                  side: const BorderSide(
+                    color: Color.fromRGBO(25, 166, 182, 1), // Border color
+                    width: 1.0, // Border width
+                  ),
+                ),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons
+                        .camera_alt), // Add a camera emoji using Icon widget
+                    SizedBox(
+                        width: 8), // Add some space between the emoji and text
+                    Text('Scan QRCode'),
+                  ],
+                ),
+              ),
+            ),
           ],
         );
       },
