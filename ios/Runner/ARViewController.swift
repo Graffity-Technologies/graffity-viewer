@@ -17,11 +17,18 @@ class ARViewController: UIViewController {
         
         if let accessToken = accessToken {
             var isFrontCamera = false
+            var pointCloudMode = false
             if (arMode == "Face Anchor") {
                 isFrontCamera = true
+            } else if (arMode == "Point Cloud & Image Anchor") {
+                pointCloudMode = true
             }
             let graffityARCloud = GraffityARCloud(accessToken: accessToken)
-            let arCloudUIView = ARCloudUIView(service: graffityARCloud, frontCameraMode: isFrontCamera)
+            let arCloudUIView = ARCloudUIView(
+                service: graffityARCloud,
+                frontCameraMode: isFrontCamera,
+                pointCloudMode: pointCloudMode
+            )
             self.addChild(arCloudUIView)
             self.view.addSubview(arCloudUIView.view)
         }
