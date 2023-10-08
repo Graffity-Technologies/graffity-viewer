@@ -3,25 +3,25 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:go_router/go_router.dart';
 
+import 'package:graffity_viewer/QRCodeScannerScreen.dart';
+
 final _controller = TextEditingController();
-const urlPrefixToken = "https://viewer.graffity.app/ar/";
+const prefixToken = "Bearer ";
 
 void main() => runApp(MaterialApp.router(routerConfig: router));
 
-/// This handles '/' and '/details'.
 final router = GoRouter(
   routes: [
     GoRoute(
       path: '/',
-      builder: (_, __) => const MainApp(),
+      builder: (_, __) => const MainApp(initToken: ""),
       routes: [
         GoRoute(
-          path: 'details',
-          builder: (_, __) => Scaffold(
-            appBar: AppBar(title: const Text('Details Screen')),
+          path: 'ar/:token',
+          builder: (context, state) => MainApp(
+            initToken: prefixToken + state.pathParameters["token"]!,
           ),
         ),
       ],
@@ -30,7 +30,12 @@ final router = GoRouter(
 );
 
 class MainApp extends StatefulWidget {
-  const MainApp({Key? key}) : super(key: key);
+  final String initToken;
+
+  const MainApp({
+    Key? key,
+    required this.initToken,
+  }) : super(key: key);
 
   @override
   State<MainApp> createState() => _MainAppState();
@@ -90,7 +95,13 @@ class _MainAppState extends State<MainApp> {
                   ),
                 ],
               ),
-              const SubmitContainer(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 32),
+                child: TextSubmitWidget(
+                  initToken: widget.initToken,
+                  onSubmit: (value) => print(""),
+                ),
+              ),
               Column(
                 children: [
                   Padding(
@@ -136,115 +147,14 @@ class _MainAppState extends State<MainApp> {
   }
 }
 
-class QRCodeScannerScreen extends StatefulWidget {
-  const QRCodeScannerScreen({Key? key}) : super(key: key);
-
-  @override
-  QRCodeScannerScreenState createState() => QRCodeScannerScreenState();
-}
-
-class QRCodeScannerScreenState extends State<QRCodeScannerScreen> {
-  final MobileScannerController cameraController = MobileScannerController();
-  String? errorMessage;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          MobileScanner(
-            controller: cameraController,
-            onDetect: (capture) {
-              final List<Barcode> barcodes = capture.barcodes;
-              for (final barcode in barcodes) {
-                final scannedText = barcode.rawValue;
-                if (scannedText == null) {
-                  continue; // Skip this if scannedText is null
-                }
-                if (scannedText.startsWith(urlPrefixToken)) {
-                  debugPrint('Barcode found! $scannedText');
-                  Navigator.pop(
-                      context, scannedText); // Return the scanned text
-                } else {
-                  // Set the error message for an invalid token
-                  setState(() {
-                    errorMessage = 'Invalid Token: $scannedText';
-                  });
-                }
-              }
-            },
-          ),
-          Positioned.fill(
-            child: Container(
-              color: Colors.black.withOpacity(0.4), // Darken the entire screen
-            ),
-          ),
-          Center(
-            child: Container(
-              width: 300.0, // Adjust the width of the scan window as needed
-              height: 300.0, // Adjust the height of the scan window as needed
-              decoration: BoxDecoration(
-                color:
-                    Colors.white.withOpacity(0.4), // Darken the entire screen
-                borderRadius: BorderRadius.circular(16.0),
-                border: Border.all(
-                  color: Colors.white,
-                  width: 2.0, // Adjust the width of the white border line
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: Container(
-              color: Colors.black,
-              height: 200, // Increase the height as needed
-              child: Center(
-                child: Text(
-                  errorMessage ??
-                      '', // Display the error message if it's not null
-                  textAlign: TextAlign.center, // Center align the text
-                  style: const TextStyle(
-                    color: Colors.grey, // Set the color for the error message
-                    fontSize: 16,
-                  ),
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            top: 50,
-            left: 0,
-            child: IconButton(
-              icon: const Icon(Icons.close, color: Colors.white),
-              iconSize: 40, // Increase the size of the X button
-              onPressed: () {
-                // Handle the close button action here
-                Navigator.pop(context);
-              },
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class SubmitContainer extends StatelessWidget {
-  const SubmitContainer({Key? key}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 32),
-      child: TextSubmitWidget(onSubmit: (value) => print(value)),
-    );
-  }
-}
-
 class TextSubmitWidget extends StatefulWidget {
-  const TextSubmitWidget({Key? key, required this.onSubmit}) : super(key: key);
+  const TextSubmitWidget({
+    Key? key,
+    required this.onSubmit,
+    required this.initToken,
+  }) : super(key: key);
+
+  final String initToken;
   final ValueChanged<String> onSubmit;
 
   @override
@@ -263,7 +173,10 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
     });
   }
 
-  static List<String> arMode = <String>['World & Image Anchor'];
+  static List<String> arMode = <String>[
+    'World & Image Anchor',
+    'Point Cloud & Image Anchor',
+  ];
   String? defaultArMode = arMode.first; // Default ArMode option
 
   @override
@@ -272,6 +185,10 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
 
     if (Platform.isIOS) {
       arMode.add('Face Anchor');
+    }
+
+    if (widget.initToken != "") {
+      _controller.text = widget.initToken;
     }
   }
 
@@ -287,7 +204,7 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
       return 'Can\'t be empty';
     }
 
-    if (!text.startsWith(urlPrefixToken)) {
+    if (!text.startsWith(prefixToken)) {
       return 'Invalid Token';
     }
 
@@ -297,7 +214,7 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
   void _submit() {
     setState(() => _submitted = true);
     final enteredValue = _controller.value.text;
-    if (_errorText == null && enteredValue.startsWith(urlPrefixToken)) {
+    if (_errorText == null && enteredValue.startsWith(prefixToken)) {
       widget.onSubmit(_controller.value.text);
       _navigateToARViewController(_controller.text, defaultArMode!);
     }
@@ -306,7 +223,11 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
   Future<void> _launchQRCodeScanner() async {
     final scannedText = await Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => QRCodeScannerScreen()),
+      MaterialPageRoute(
+        builder: (context) => const QRCodeScannerScreen(
+          prefixToken: prefixToken,
+        ),
+      ),
     );
 
     if (scannedText != null) {
@@ -324,39 +245,37 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            SizedBox(
-              height: 80,
-              child: TextField(
-                controller: _controller,
-                decoration: InputDecoration(
-                  labelText: 'Enter project access token',
-                  errorText: _submitted ? _errorText : null,
-                ),
+            TextField(
+              controller: _controller,
+              decoration: InputDecoration(
+                labelText: 'Enter project access token',
+                errorText: _submitted ? _errorText : null,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 12),
-              child: DropdownButton<String>(
-                isExpanded: true,
-                value: defaultArMode,
-                onChanged: (String? newValue) {
-                  setState(() {
-                    defaultArMode = newValue;
-                  });
-                },
-                items: arMode.map((arMode) {
-                  return DropdownMenuItem(
-                    value: arMode,
-                    child: Text(arMode),
-                  );
-                }).toList(),
-              ),
+            const SizedBox(height: 8),
+            DropdownButton<String>(
+              isExpanded: true,
+              value: defaultArMode,
+              onChanged: (String? newValue) {
+                setState(() {
+                  defaultArMode = newValue;
+                });
+              },
+              items: arMode.map((arMode) {
+                return DropdownMenuItem(
+                  value: arMode,
+                  child: Text(arMode),
+                );
+              }).toList(),
             ),
-            const SizedBox(height: 12),
+            const SizedBox(height: 16),
             SizedBox(
               height: 40,
               child: ElevatedButton(
                 onPressed: _controller.value.text.isNotEmpty ? _submit : null,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromRGBO(25, 166, 182, 1),
+                ),
                 child: Text(
                   'Launch AR',
                   style: Theme.of(context)
@@ -366,33 +285,58 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
                 ),
               ),
             ),
-            const SizedBox(height: 12),
-            const Divider(
-                color: Colors.grey, thickness: 1), // Insert a horizontal line
-            const SizedBox(height: 12),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Divider(
+                      color: Colors.grey,
+                      thickness: 0.5,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      'OR',
+                      style: TextStyle(fontSize: 12),
+                    ),
+                  ),
+                  Expanded(
+                    child: Divider(
+                      color: Colors.grey,
+                      thickness: 0.5,
+                    ),
+                  ),
+                ],
+              ),
+            ),
             SizedBox(
               height: 40,
-              child: ElevatedButton(
+              child: OutlinedButton(
                 onPressed: () async {
                   await _launchQRCodeScanner();
                 },
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.black,
-                  backgroundColor:
-                      const Color.fromARGB(228, 255, 255, 255), // Text color
-                  side: const BorderSide(
-                    color: Color.fromRGBO(25, 166, 182, 1), // Border color
-                    width: 1.0, // Border width
-                  ),
                 ),
-                child: const Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons
-                        .camera_alt), // Add a camera emoji using Icon widget
-                    SizedBox(
+                    const Icon(
+                      Icons.camera_alt,
+                      color: Color.fromRGBO(25, 166, 182, 1),
+                      size: 24,
+                    ), // Add a camera emoji using Icon widget
+                    const SizedBox(
                         width: 8), // Add some space between the emoji and text
-                    Text('Scan QRCode'),
+                    Text(
+                      'Scan QR Code',
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyMedium!
+                          .copyWith(color: Colors.black),
+                    ),
                   ],
                 ),
               ),
