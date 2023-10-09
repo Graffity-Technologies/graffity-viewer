@@ -8,6 +8,9 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:7.2.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // Temp for testing local package
+//        classpath "com.google.protobuf:protobuf-gradle-plugin:0.8.18"
     }
 }
 

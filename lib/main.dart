@@ -173,18 +173,21 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
     });
   }
 
-  static List<String> arMode = <String>[
+  static List<String> arModes = <String>[
     'World & Image Anchor',
     'Point Cloud & Image Anchor',
   ];
-  String? defaultArMode = arMode.first; // Default ArMode option
+  String? defaultArMode = arModes.first; // Default ArMode option
 
   @override
   void initState() {
     super.initState();
 
     if (Platform.isIOS) {
-      arMode.add('Face Anchor');
+      var faceAnchorName = 'Face Anchor';
+      if (!arModes.contains(faceAnchorName)) {
+        arModes.add(faceAnchorName);
+      }
     }
 
     if (widget.initToken != "") {
@@ -261,7 +264,7 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
                   defaultArMode = newValue;
                 });
               },
-              items: arMode.map((arMode) {
+              items: arModes.map((arMode) {
                 return DropdownMenuItem(
                   value: arMode,
                   child: Text(arMode),
