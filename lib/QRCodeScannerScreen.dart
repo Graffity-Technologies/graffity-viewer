@@ -18,6 +18,13 @@ class QRCodeScannerScreenState extends State<QRCodeScannerScreen> {
   final MobileScannerController cameraController = MobileScannerController();
   String? errorMessage;
 
+  bool _isPopScreen = false;
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +32,10 @@ class QRCodeScannerScreenState extends State<QRCodeScannerScreen> {
         children: [
           MobileScanner(
             controller: cameraController,
+            errorBuilder: (context, error, child) {
+              cameraController.stop();
+              return Container();
+            },
             onDetect: (capture) {
               final List<Barcode> barcodes = capture.barcodes;
               for (final barcode in barcodes) {
@@ -32,7 +43,10 @@ class QRCodeScannerScreenState extends State<QRCodeScannerScreen> {
                 if (scannedText == null) {
                   continue; // Skip this if scannedText is null
                 }
-                if (scannedText.startsWith(prefixUrl)) {
+                if (scannedText.startsWith(prefixUrl) && !_isPopScreen) {
+                  setState(() {
+                    _isPopScreen = true; // prevent repeated calling pop
+                  });
                   debugPrint('Barcode found! $scannedText');
                   scannedText =
                       widget.prefixToken + scannedText.split(prefixUrl).last;
