@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Graffity-Technologies/graffity-arcloud-ios.git",
       "state" : {
-        "revision" : "e285ef3e503313e0c42a4987fb6f0035b077672f",
-        "version" : "1.0.6"
+        "revision" : "6b59e9a09e8001234600dae5e2c02023af808e11",
+        "version" : "1.0.7"
       }
     }
   ],
