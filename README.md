@@ -17,6 +17,5 @@ We create this application on top of Flutter and communicate with Graffity AR na
 ### Android
 0. Required `keystore` owner to build release. Ref https://docs.flutter.dev/deployment/android
 1. Change app & build version in `android/local.properties` & `pubspec.yaml`
-2. `flutter build appbundle`
-3. The release bundle for your app is created at `[project]/build/app/outputs/bundle/release/app.aab`.
-4. Upload `.aab` to Google Play Console
+2. Generate signed abb with Android Studio
+3. Upload `.aab` to Google Play Console
