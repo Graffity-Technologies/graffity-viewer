@@ -14,7 +14,7 @@ class MainActivity: FlutterActivity() {
     private val CHANNEL = "app.graffity.ar-viewer/ar"
 
     override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
-        GeneratedPluginRegistrant.registerWith(flutterEngine);
+        GeneratedPluginRegistrant.registerWith(flutterEngine)
         super.configureFlutterEngine(flutterEngine)
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
                 call, result ->
@@ -22,12 +22,15 @@ class MainActivity: FlutterActivity() {
                 val accessToken = call.argument<String>("accessToken")
                 val arMode = call.argument<String>("arMode")
                 var isFrontCamera = false
+                var pointCloudMode = false
                 if (arMode == "Face Anchor") {
                     isFrontCamera = true
+                } else if (arMode == "Point Cloud & Image Anchor") {
+                    pointCloudMode = true
                 }
                 val intent = Intent(this, ARCloudActivity::class.java)
 //                intent.putExtra("OnSceneTouchedListener", OnSceneTouchedListener(onSceneTouchedAction))
-                intent.putExtra("PointCloudMode", false)
+                intent.putExtra("PointCloudMode", pointCloudMode)
                 intent.putExtra("FrontCameraMode", isFrontCamera)
                 intent.putExtra("AccessToken", accessToken)
                 startActivity(intent)
