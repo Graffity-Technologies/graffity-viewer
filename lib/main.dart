@@ -174,8 +174,8 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
   }
 
   static List<String> arModes = <String>[
-    'World & Image Anchor',
     'Point Cloud & Image Anchor',
+    'World & Image Anchor',
   ];
   String? defaultArMode = arModes.first; // Default ArMode option
 
