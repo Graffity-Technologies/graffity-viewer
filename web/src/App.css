@@ -1,0 +1,21 @@
+.App {
+    margin: 0 40px;
+    /* display: flex;
+    justify-content: center; */
+    text-align: center;
+
+    /* font-family: */
+}
+
+.app-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn-container {}
+
+.btn-app-store {
+    margin-right: 12px;
+}
