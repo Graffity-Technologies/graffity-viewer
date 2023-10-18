@@ -25,14 +25,14 @@ function App() {
             <img
               src={AppStoreImage}
               alt="Download on the App Store"
-              width={140}
+              width={150}
             />
           </a>
           <a href={googlePlayURL} target="_blank" rel="noopener noreferrer">
             <img
               src={GooglePlayImage}
               alt="Get it on Google Play"
-              width={140}
+              width={150}
             />
           </a>
         </div>
