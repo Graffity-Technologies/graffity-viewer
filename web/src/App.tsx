@@ -15,7 +15,7 @@ function App() {
         <img
           src={ViewerLogo}
           alt="Viewer Logo"
-          width={300}
+          width={230}
         />
         <br /><br /><br /><br />
         <p>App is not installed on your device? <br />Download it from App Store or Google Play.</p>
@@ -25,14 +25,14 @@ function App() {
             <img
               src={AppStoreImage}
               alt="Download on the App Store"
-              width={200}
+              width={140}
             />
           </a>
           <a href={googlePlayURL} target="_blank" rel="noopener noreferrer">
             <img
               src={GooglePlayImage}
               alt="Get it on Google Play"
-              width={200}
+              width={140}
             />
           </a>
         </div>
