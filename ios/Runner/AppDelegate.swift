@@ -25,7 +25,9 @@ import Flutter
                     
                     let navigationController = UINavigationController(rootViewController: arVC)
                     navigationController.isNavigationBarHidden = true
-                    self!.window!.rootViewController = navigationController
+                    // Present the navigation controller modally
+                    navigationController.modalPresentationStyle = .fullScreen
+                    self!.window?.rootViewController?.present(navigationController, animated: true, completion: nil)
                     self!.window!.makeKeyAndVisible()
                 }
             }
