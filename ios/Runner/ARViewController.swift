@@ -12,6 +12,11 @@ class ARViewController: UIViewController {
     var accessToken: String?
     var arMode: String?
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,12 +37,6 @@ class ARViewController: UIViewController {
             self.addChild(arCloudUIView)
             self.view.addSubview(arCloudUIView.view)
         }
-        
-        let closeButton = UIButton(type: .system)
-        closeButton.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-        closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
-        closeButton.frame = CGRect(x: 16, y: 60, width: 40, height: 40) // Adjust the values as needed
-        self.view.addSubview(closeButton)
     }
     @objc func closeButtonTapped() {
         self.dismiss(animated: true, completion: nil)

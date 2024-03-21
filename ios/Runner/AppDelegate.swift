@@ -3,6 +3,9 @@ import Flutter
 
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
+    
+    var navigationController: UINavigationController!
+    
     override func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
@@ -12,6 +15,11 @@ import Flutter
         
         // Flutter Platform Channel Setup
         let controller : FlutterViewController = window?.rootViewController as! FlutterViewController
+        self.navigationController = UINavigationController(rootViewController: controller)
+        self.window.rootViewController = self.navigationController
+        self.navigationController.setNavigationBarHidden(true, animated: false)
+        self.window.makeKeyAndVisible()
+        
         let ARChannel = FlutterMethodChannel(name: "app.graffity.ar-viewer/ar", binaryMessenger: controller.binaryMessenger)
         
         ARChannel.setMethodCallHandler { [weak self] (call: FlutterMethodCall, result: @escaping FlutterResult) -> Void in
@@ -23,12 +31,8 @@ import Flutter
                     arVC.accessToken = accessToken
                     arVC.arMode = arMode
                     
-                    let navigationController = UINavigationController(rootViewController: arVC)
-                    navigationController.isNavigationBarHidden = true
-                    // Present the navigation controller modally
-                    navigationController.modalPresentationStyle = .fullScreen
-                    self!.window?.rootViewController?.present(navigationController, animated: true, completion: nil)
-                    self!.window!.makeKeyAndVisible()
+                    self?.navigationController.setNavigationBarHidden(false, animated: true)
+                    self?.navigationController.pushViewController(arVC, animated: true)
                 }
             }
         }
