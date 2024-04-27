@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
@@ -14,15 +16,90 @@ class QRCodeScannerScreen extends StatefulWidget {
   QRCodeScannerScreenState createState() => QRCodeScannerScreenState();
 }
 
-class QRCodeScannerScreenState extends State<QRCodeScannerScreen> {
-  final MobileScannerController cameraController = MobileScannerController();
+class QRCodeScannerScreenState extends State<QRCodeScannerScreen>
+    with WidgetsBindingObserver {
+  final MobileScannerController controller = MobileScannerController();
+  StreamSubscription<Object?>? _subscription;
+
   String? errorMessage;
 
   bool _isPopScreen = false;
 
   @override
-  void dispose() {
+  void initState() {
+    super.initState();
+    // Start listening to lifecycle changes.
+    WidgetsBinding.instance.addObserver(this);
+
+    // Start listening to the barcode events.
+    _subscription = controller.barcodes.listen(_handleBarcode);
+
+    // Finally, start the scanner itself.
+    unawaited(controller.start());
+  }
+
+  @override
+  Future<void> dispose() async {
+    // Stop listening to lifecycle changes.
+    WidgetsBinding.instance.removeObserver(this);
+    // Stop listening to the barcode events.
+    unawaited(_subscription?.cancel());
+    _subscription = null;
+    // Dispose the widget itself.
     super.dispose();
+    // Finally, dispose of the controller.
+    await controller.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    super.didChangeAppLifecycleState(state);
+
+    switch (state) {
+      case AppLifecycleState.paused:
+        return;
+      case AppLifecycleState.resumed:
+        // Restart the scanner when the app is resumed.
+        // Don't forget to resume listening to the barcode events.
+        _subscription = controller.barcodes.listen(_handleBarcode);
+        unawaited(controller.start());
+        return;
+      case AppLifecycleState.inactive:
+        // Stop the scanner when the app is paused.
+        // Also stop the barcode events subscription.
+        unawaited(_subscription?.cancel());
+        _subscription = null;
+        unawaited(controller.stop());
+        return;
+      case AppLifecycleState.detached:
+        break;
+      case AppLifecycleState.hidden:
+        break;
+    }
+  }
+
+  void _handleBarcode(BarcodeCapture capture) {
+    final List<Barcode> barcodes = capture.barcodes;
+    for (final barcode in barcodes) {
+      var scannedText = barcode.rawValue;
+      if (scannedText == null) {
+        continue; // Skip this if scannedText is null
+      }
+      if (scannedText.startsWith(prefixUrl) && !_isPopScreen) {
+        setState(() {
+          _isPopScreen = true; // prevent repeated calling pop
+        });
+        debugPrint('Barcode found! $scannedText');
+        scannedText = widget.prefixToken + scannedText.split(prefixUrl).last;
+        Navigator.pop(context, scannedText); // Return the scanned text
+      } else {
+        // Set the error message for an invalid token
+        setState(() {
+          errorMessage =
+              'Invalid QR Code. Please scan QR Code from a project page in Graffity Console';
+        });
+      }
+    }
   }
 
   @override
@@ -31,35 +108,10 @@ class QRCodeScannerScreenState extends State<QRCodeScannerScreen> {
       body: Stack(
         children: [
           MobileScanner(
-            controller: cameraController,
+            controller: controller,
             errorBuilder: (context, error, child) {
-              cameraController.stop();
+              controller.stop();
               return Container();
-            },
-            onDetect: (capture) {
-              final List<Barcode> barcodes = capture.barcodes;
-              for (final barcode in barcodes) {
-                var scannedText = barcode.rawValue;
-                if (scannedText == null) {
-                  continue; // Skip this if scannedText is null
-                }
-                if (scannedText.startsWith(prefixUrl) && !_isPopScreen) {
-                  setState(() {
-                    _isPopScreen = true; // prevent repeated calling pop
-                  });
-                  debugPrint('Barcode found! $scannedText');
-                  scannedText =
-                      widget.prefixToken + scannedText.split(prefixUrl).last;
-                  Navigator.pop(
-                      context, scannedText); // Return the scanned text
-                } else {
-                  // Set the error message for an invalid token
-                  setState(() {
-                    errorMessage =
-                        'Invalid QR Code. Please scan QR Code from a project page in Graffity Console';
-                  });
-                }
-              }
             },
           ),
           Positioned.fill(

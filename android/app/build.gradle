@@ -27,6 +27,7 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
     compileSdkVersion 34
+    compileSdk 34
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -51,10 +52,10 @@ android {
         applicationId "com.graffity.ar_viewer"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdkVersion 24
+        minSdkVersion 28
         targetSdkVersion 34
-        versionCode 31010
-        versionName "3.1.0"
+        versionCode 32101
+        versionName "3.2.1"
     }
 
     buildTypes {
@@ -66,6 +67,7 @@ android {
 //            signingConfig signingConfigs.debug
         }
     }
+    namespace 'com.graffity.ar_viewer'
 }
 
 flutter {
@@ -73,12 +75,12 @@ flutter {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.7.4'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.2'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.7.4'
-    implementation 'com.google.android.material:material:1.9.0'
-    implementation 'com.graffity.android:arcloud:2.1.0'
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.7.7'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.7.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.7.7'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'com.graffity.android:arcloud:3.4.0'
 //    implementation project(':arcloud')
 }
