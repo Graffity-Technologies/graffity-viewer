@@ -4,7 +4,7 @@ import Flutter
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
     
-    var navigationController: UINavigationController!
+//    var navigationController: UINavigationController!
     
     override func application(
         _ application: UIApplication,
@@ -15,10 +15,10 @@ import Flutter
         
         // Flutter Platform Channel Setup
         let controller : FlutterViewController = window?.rootViewController as! FlutterViewController
-        self.navigationController = UINavigationController(rootViewController: controller)
-        self.window.rootViewController = self.navigationController
-        self.navigationController.setNavigationBarHidden(true, animated: false)
-        self.window.makeKeyAndVisible()
+//        self.navigationController = UINavigationController(rootViewController: controller)
+//        self.window.rootViewController = self.navigationController
+//        self.navigationController.setNavigationBarHidden(true, animated: false)
+//        self.window.makeKeyAndVisible()
         
         let ARChannel = FlutterMethodChannel(name: "app.graffity.ar-viewer/ar", binaryMessenger: controller.binaryMessenger)
         
@@ -31,8 +31,10 @@ import Flutter
                     arVC.accessToken = accessToken
                     arVC.arMode = arMode
                     
-                    self?.navigationController.setNavigationBarHidden(false, animated: true)
-                    self?.navigationController.pushViewController(arVC, animated: true)
+                    self?.window.rootViewController = arVC
+                    
+//                    self?.navigationController.setNavigationBarHidden(false, animated: true)
+//                    self?.navigationController.pushViewController(arVC, animated: true)
                 }
             }
         }

@@ -146,6 +146,7 @@
 				9705A1C41CF9048500538489 /* Embed Frameworks */,
 				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
 				320576826712A9B41676F108 /* [CP] Embed Pods Frameworks */,
+				29E38E28F1745EDC789EA2E4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -184,7 +185,7 @@
 			);
 			mainGroup = 97C146E51CF9000F007C117D;
 			packageReferences = (
-				76002DD32AD3F4100042F585 /* XCRemoteSwiftPackageReference "graffity-arcloud-ios" */,
+				76002DD32AD3F4100042F585 /* XCRemoteSwiftPackageReference "graffity-arcloud-ios.git" */,
 			);
 			productRefGroup = 97C146EF1CF9000F007C117D /* Products */;
 			projectDirPath = "";
@@ -210,6 +211,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		29E38E28F1745EDC789EA2E4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2E2D6D7498A5AEBA4E146AA6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -592,7 +610,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		76002DD32AD3F4100042F585 /* XCRemoteSwiftPackageReference "graffity-arcloud-ios" */ = {
+		76002DD32AD3F4100042F585 /* XCRemoteSwiftPackageReference "graffity-arcloud-ios.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Graffity-Technologies/graffity-arcloud-ios.git";
 			requirement = {
@@ -605,7 +623,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		76002DD42AD3F4100042F585 /* GraffityARCloud */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 76002DD32AD3F4100042F585 /* XCRemoteSwiftPackageReference "graffity-arcloud-ios" */;
+			package = 76002DD32AD3F4100042F585 /* XCRemoteSwiftPackageReference "graffity-arcloud-ios.git" */;
 			productName = GraffityARCloud;
 		};
 /* End XCSwiftPackageProductDependency section */
