@@ -615,7 +615,7 @@
 			repositoryURL = "https://github.com/Graffity-Technologies/graffity-arcloud-ios.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.2.0;
+				minimumVersion = 3.2.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
