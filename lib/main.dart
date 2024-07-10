@@ -223,6 +223,35 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
     }
   }
 
+  void _showARWarning(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('AR Safety Warning'),
+          content: const Text(
+              'For your safety and the safety of others, always be alert and aware of your surroundings before and while using AR experiences.'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+                // Navigate to your AR experience screen here
+                _submit();
+              },
+              child: const Text('Continue'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   Future<void> _launchQRCodeScanner() async {
     final scannedText = await Navigator.push(
       context,
@@ -275,7 +304,10 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
             SizedBox(
               height: 40,
               child: ElevatedButton(
-                onPressed: _controller.value.text.isNotEmpty ? _submit : null,
+                onPressed: () => {
+                  if (_controller.value.text.isNotEmpty)
+                    {_showARWarning(context)}
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromRGBO(25, 166, 182, 1),
                 ),
