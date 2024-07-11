@@ -239,7 +239,8 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
               SizedBox(height: 10),
               Row(
                 children: [
-                  Icon(Icons.supervisor_account, color: Colors.blue),
+                  Icon(Icons.supervisor_account,
+                      color: Color.fromRGBO(25, 166, 182, 1)),
                   SizedBox(width: 10),
                   Expanded(
                     child: Text(
@@ -251,7 +252,8 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
               SizedBox(height: 10),
               Row(
                 children: [
-                  Icon(Icons.visibility, color: Colors.blue),
+                  Icon(Icons.visibility,
+                      color: Color.fromRGBO(25, 166, 182, 1)),
                   SizedBox(width: 10),
                   Expanded(
                     child: Text(
