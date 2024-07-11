@@ -229,8 +229,44 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('AR Safety Warning'),
-          content: const Text(
-              'For your safety and the safety of others, always be alert and aware of your surroundings before and while using AR experiences.'),
+          content: const Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                'This app uses AR. Please ensure the following before proceeding:',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 10),
+              Row(
+                children: [
+                  Icon(Icons.supervisor_account, color: Colors.blue),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: Text(
+                      'Parental Supervision: Parental supervision is highly recommended for younger users.',
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10),
+              Row(
+                children: [
+                  Icon(Icons.visibility, color: Colors.blue),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: Text(
+                      'Stay Aware of Surroundings: Always be mindful of your real-world environment to avoid physical hazards.',
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20),
+              Text(
+                'By continuing, you acknowledge that you have read and understood these safety precautions.',
+                style: TextStyle(fontStyle: FontStyle.italic),
+              ),
+            ],
+          ),
           actions: [
             TextButton(
               onPressed: () {
