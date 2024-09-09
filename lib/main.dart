@@ -1,5 +1,8 @@
 import 'dart:async';
 import 'dart:io';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -10,7 +13,21 @@ import 'package:graffity_viewer/QRCodeScannerScreen.dart';
 final _controller = TextEditingController();
 const prefixToken = "Bearer ";
 
-void main() => runApp(MaterialApp.router(routerConfig: router));
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp();
+  FlutterError.onError = (errorDetails) {
+    FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
+  };
+  // Pass all uncaught asynchronous errors that aren't handled by the Flutter framework to Crashlytics
+  PlatformDispatcher.instance.onError = (error, stack) {
+    FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
+    return true;
+  };
+
+  runApp(MaterialApp.router(routerConfig: router));
+}
 
 final router = GoRouter(
   routes: [
@@ -49,9 +66,10 @@ class _MainAppState extends State<MainApp> {
   final Uri _consoleUrl = Uri.parse("https://console.graffity.tech");
 
   Future<void> _launchViewerGithubUrl() async {
-    if (!await launchUrl(_githubCloneUrl)) {
-      throw Exception('Could not launch $_githubCloneUrl');
-    }
+    // if (!await launchUrl(_githubCloneUrl)) {
+    //   throw Exception('Could not launch $_githubCloneUrl');
+    // }
+    throw Exception("TEST CRASH");
   }
 
   Future<void> _launchDocTokenUrl() async {

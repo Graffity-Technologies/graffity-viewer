@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "711625420808",
+    "project_id": "graffity-viewer",
+    "storage_bucket": "graffity-viewer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:711625420808:android:9ee8e3f384dddda1b7a1bd",
+        "android_client_info": {
+          "package_name": "com.graffity.ar_viewer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAk8DYLvdRIoaKFE0f_rvPoumAgcXXgPsI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
