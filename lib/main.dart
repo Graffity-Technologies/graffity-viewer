@@ -66,10 +66,9 @@ class _MainAppState extends State<MainApp> {
   final Uri _consoleUrl = Uri.parse("https://console.graffity.tech");
 
   Future<void> _launchViewerGithubUrl() async {
-    // if (!await launchUrl(_githubCloneUrl)) {
-    //   throw Exception('Could not launch $_githubCloneUrl');
-    // }
-    throw Exception("TEST CRASH");
+    if (!await launchUrl(_githubCloneUrl)) {
+      throw Exception('Could not launch $_githubCloneUrl');
+    }
   }
 
   Future<void> _launchDocTokenUrl() async {
