@@ -39,6 +39,8 @@ final router = GoRouter(
           path: 'ar/:token',
           builder: (context, state) => MainApp(
             initToken: prefixToken + state.pathParameters["token"]!,
+            latitude: double.tryParse(state.uri.queryParameters["lat"] ?? ""),
+            longitude: double.tryParse(state.uri.queryParameters["long"] ?? ""),
           ),
         ),
       ],
@@ -48,10 +50,14 @@ final router = GoRouter(
 
 class MainApp extends StatefulWidget {
   final String initToken;
+  final double? latitude;
+  final double? longitude;
 
   const MainApp({
     Key? key,
     required this.initToken,
+    this.latitude,
+    this.longitude,
   }) : super(key: key);
 
   @override
