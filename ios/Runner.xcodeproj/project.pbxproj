@@ -110,16 +110,6 @@
 			path = RunnerAppClip;
 			sourceTree = "<group>";
 		};
-		BE0735F02D82D88E00B233ED /* RunnerAppClipTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = RunnerAppClipTests;
-			sourceTree = "<group>";
-		};
-		BE0735FA2D82D88E00B233ED /* RunnerAppClipUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = RunnerAppClipUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,8 +164,6 @@
 				9740EEB11CF90186004384FC /* Flutter */,
 				97C146F01CF9000F007C117D /* Runner */,
 				BE0735D82D82D88C00B233ED /* RunnerAppClip */,
-				BE0735F02D82D88E00B233ED /* RunnerAppClipTests */,
-				BE0735FA2D82D88E00B233ED /* RunnerAppClipUITests */,
 				97C146EF1CF9000F007C117D /* Products */,
 				69E0E4B6D58F764277196362 /* Pods */,
 				497EC8484E88165A7E846FC2 /* GoogleService-Info.plist */,
