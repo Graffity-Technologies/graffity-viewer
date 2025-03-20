@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,20 +30,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BE0735EE2D82D88E00B233ED /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 97C146E61CF9000F007C117D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BE0735D62D82D88B00B233ED;
-			remoteInfo = RunnerAppClip;
-		};
-		BE0735F82D82D88E00B233ED /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 97C146E61CF9000F007C117D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BE0735D62D82D88B00B233ED;
-			remoteInfo = RunnerAppClip;
-		};
 		BE0735FF2D82D88E00B233ED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 97C146E61CF9000F007C117D /* Project object */;
@@ -102,8 +88,6 @@
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE0735D72D82D88B00B233ED /* RunnerAppClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunnerAppClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE0735ED2D82D88E00B233ED /* RunnerAppClipTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunnerAppClipTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE0735F72D82D88E00B233ED /* RunnerAppClipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunnerAppClipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C672B02FDCCAF87437926B4B /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,20 +141,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BE0735EA2D82D88E00B233ED /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BE0735F42D82D88E00B233ED /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -218,8 +188,6 @@
 			children = (
 				97C146EE1CF9000F007C117D /* Runner.app */,
 				BE0735D72D82D88B00B233ED /* RunnerAppClip.app */,
-				BE0735ED2D82D88E00B233ED /* RunnerAppClipTests.xctest */,
-				BE0735F72D82D88E00B233ED /* RunnerAppClipUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -307,48 +275,6 @@
 			productReference = BE0735D72D82D88B00B233ED /* RunnerAppClip.app */;
 			productType = "com.apple.product-type.application.on-demand-install-capable";
 		};
-		BE0735EC2D82D88E00B233ED /* RunnerAppClipTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BE0736082D82D88E00B233ED /* Build configuration list for PBXNativeTarget "RunnerAppClipTests" */;
-			buildPhases = (
-				BE0735E92D82D88E00B233ED /* Sources */,
-				BE0735EA2D82D88E00B233ED /* Frameworks */,
-				BE0735EB2D82D88E00B233ED /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BE0735EF2D82D88E00B233ED /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				BE0735F02D82D88E00B233ED /* RunnerAppClipTests */,
-			);
-			name = RunnerAppClipTests;
-			productName = RunnerAppClipTests;
-			productReference = BE0735ED2D82D88E00B233ED /* RunnerAppClipTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		BE0735F62D82D88E00B233ED /* RunnerAppClipUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BE07360C2D82D88E00B233ED /* Build configuration list for PBXNativeTarget "RunnerAppClipUITests" */;
-			buildPhases = (
-				BE0735F32D82D88E00B233ED /* Sources */,
-				BE0735F42D82D88E00B233ED /* Frameworks */,
-				BE0735F52D82D88E00B233ED /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BE0735F92D82D88E00B233ED /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				BE0735FA2D82D88E00B233ED /* RunnerAppClipUITests */,
-			);
-			name = RunnerAppClipUITests;
-			productName = RunnerAppClipUITests;
-			productReference = BE0735F72D82D88E00B233ED /* RunnerAppClipUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -365,14 +291,6 @@
 					};
 					BE0735D62D82D88B00B233ED = {
 						CreatedOnToolsVersion = 16.2;
-					};
-					BE0735EC2D82D88E00B233ED = {
-						CreatedOnToolsVersion = 16.2;
-						TestTargetID = BE0735D62D82D88B00B233ED;
-					};
-					BE0735F62D82D88E00B233ED = {
-						CreatedOnToolsVersion = 16.2;
-						TestTargetID = BE0735D62D82D88B00B233ED;
 					};
 				};
 			};
@@ -394,8 +312,6 @@
 			targets = (
 				97C146ED1CF9000F007C117D /* Runner */,
 				BE0735D62D82D88B00B233ED /* RunnerAppClip */,
-				BE0735EC2D82D88E00B233ED /* RunnerAppClipTests */,
-				BE0735F62D82D88E00B233ED /* RunnerAppClipUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -421,20 +337,6 @@
 				BE07362C2D89701B00B233ED /* GoogleService-Info.plist in Resources */,
 				BE0736122D895D5800B233ED /* Assets.xcassets in Resources */,
 				BE0736112D895D4B00B233ED /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BE0735EB2D82D88E00B233ED /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BE0735F52D82D88E00B233ED /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,33 +565,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BE0735E92D82D88E00B233ED /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BE0735F32D82D88E00B233ED /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BE0735EF2D82D88E00B233ED /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BE0735D62D82D88B00B233ED /* RunnerAppClip */;
-			targetProxy = BE0735EE2D82D88E00B233ED /* PBXContainerItemProxy */;
-		};
-		BE0735F92D82D88E00B233ED /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BE0735D62D82D88B00B233ED /* RunnerAppClip */;
-			targetProxy = BE0735F82D82D88E00B233ED /* PBXContainerItemProxy */;
-		};
 		BE0736002D82D88E00B233ED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BE0735D62D82D88B00B233ED /* RunnerAppClip */;
@@ -760,7 +638,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
-				MARKETING_VERSION = 3.3.2;
+				MARKETING_VERSION = 3.3.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
@@ -852,7 +730,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
-				MARKETING_VERSION = 3.3.2;
+				MARKETING_VERSION = 3.3.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -904,7 +782,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
-				MARKETING_VERSION = 3.3.2;
+				MARKETING_VERSION = 3.3.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
@@ -1000,6 +878,7 @@
 				CODE_SIGN_ENTITLEMENTS = RunnerAppClip/RunnerAppClip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 33301;
 				DEVELOPMENT_TEAM = 5U237QB3J2;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -1051,6 +930,7 @@
 				CODE_SIGN_ENTITLEMENTS = RunnerAppClip/RunnerAppClip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 33301;
 				DEVELOPMENT_TEAM = 5U237QB3J2;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -1099,6 +979,7 @@
 				CODE_SIGN_ENTITLEMENTS = RunnerAppClip/RunnerAppClip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 33301;
 				DEVELOPMENT_TEAM = 5U237QB3J2;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -1127,177 +1008,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
-			};
-			name = Profile;
-		};
-		BE0736092D82D88E00B233ED /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3R8U585Y7Q;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "app.graffity.ar-viewer.RunnerAppClipTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RunnerAppClip.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RunnerAppClip";
-			};
-			name = Debug;
-		};
-		BE07360A2D82D88E00B233ED /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3R8U585Y7Q;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "app.graffity.ar-viewer.RunnerAppClipTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RunnerAppClip.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RunnerAppClip";
-			};
-			name = Release;
-		};
-		BE07360B2D82D88E00B233ED /* Profile */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3R8U585Y7Q;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "app.graffity.ar-viewer.RunnerAppClipTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RunnerAppClip.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RunnerAppClip";
-			};
-			name = Profile;
-		};
-		BE07360D2D82D88E00B233ED /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3R8U585Y7Q;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "app.graffity.ar-viewer.RunnerAppClipUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = RunnerAppClip;
-			};
-			name = Debug;
-		};
-		BE07360E2D82D88E00B233ED /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3R8U585Y7Q;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "app.graffity.ar-viewer.RunnerAppClipUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = RunnerAppClip;
-			};
-			name = Release;
-		};
-		BE07360F2D82D88E00B233ED /* Profile */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3R8U585Y7Q;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "app.graffity.ar-viewer.RunnerAppClipUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = RunnerAppClip;
 			};
 			name = Profile;
 		};
@@ -1330,26 +1040,6 @@
 				BE0736042D82D88E00B233ED /* Debug */,
 				BE0736052D82D88E00B233ED /* Release */,
 				BE0736062D82D88E00B233ED /* Profile */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BE0736082D82D88E00B233ED /* Build configuration list for PBXNativeTarget "RunnerAppClipTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BE0736092D82D88E00B233ED /* Debug */,
-				BE07360A2D82D88E00B233ED /* Release */,
-				BE07360B2D82D88E00B233ED /* Profile */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BE07360C2D82D88E00B233ED /* Build configuration list for PBXNativeTarget "RunnerAppClipUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BE07360D2D82D88E00B233ED /* Debug */,
-				BE07360E2D82D88E00B233ED /* Release */,
-				BE07360F2D82D88E00B233ED /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

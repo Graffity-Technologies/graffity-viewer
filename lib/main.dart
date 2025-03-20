@@ -122,6 +122,8 @@ class _MainAppState extends State<MainApp> {
                 padding: const EdgeInsets.symmetric(horizontal: 32),
                 child: TextSubmitWidget(
                   initToken: widget.initToken,
+                  latitude: widget.latitude,
+                  longitude: widget.longitude,
                   onSubmit: (value) => print(""),
                 ),
               ),
@@ -175,9 +177,13 @@ class TextSubmitWidget extends StatefulWidget {
     Key? key,
     required this.onSubmit,
     required this.initToken,
+    this.latitude,
+    this.longitude,
   }) : super(key: key);
 
   final String initToken;
+  final double? latitude;
+  final double? longitude;
   final ValueChanged<String> onSubmit;
 
   @override
@@ -189,10 +195,12 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
 
   static const platformAR = MethodChannel('app.graffity.ar-viewer/ar');
   Future<void> _navigateToARViewController(
-      String accessToken, String arMode) async {
+      String accessToken, String arMode, double? latitude, double? longitude) async {
     await platformAR.invokeMethod('OpenAR', {
       'accessToken': accessToken,
       'arMode': arMode,
+      'latitude': latitude,
+      'longitude': longitude,
     });
   }
 
@@ -242,7 +250,7 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
     final enteredValue = _controller.value.text;
     if (_errorText == null && enteredValue.startsWith(prefixToken)) {
       widget.onSubmit(_controller.value.text);
-      _navigateToARViewController(_controller.text, defaultArMode!);
+      _navigateToARViewController(_controller.text, defaultArMode!, widget.latitude, widget.longitude);
     }
   }
 
