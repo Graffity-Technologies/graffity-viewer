@@ -1,7 +1,7 @@
 import UIKit
 import Flutter
 
-@UIApplicationMain
+@main
 @objc class AppDelegate: FlutterAppDelegate {
     
 //    var navigationController: UINavigationController!
@@ -30,6 +30,12 @@ import Flutter
                     let arVC = ARViewController()
                     arVC.accessToken = accessToken
                     arVC.arMode = arMode
+                    if let latitude = args["latitude"] as? Double,
+                       let longitude = args["longitude"] as? Double {
+                        arVC.latitude = latitude
+                        arVC.longitude = longitude
+                    }
+                    
                     
                     self?.window.rootViewController = arVC
                     

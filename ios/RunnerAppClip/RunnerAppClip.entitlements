@@ -5,7 +5,10 @@
 	<key>com.apple.developer.associated-domains</key>
 	<array>
 		<string>appclips:viewer.graffity.app</string>
-		<string>applinks:viewer.graffity.app</string>
+	</array>
+	<key>com.apple.developer.parent-application-identifiers</key>
+	<array>
+		<string>$(AppIdentifierPrefix)app.graffity.ar-viewer</string>
 	</array>
 </dict>
 </plist>

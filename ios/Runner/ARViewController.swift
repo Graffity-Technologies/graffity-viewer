@@ -11,6 +11,8 @@ import GraffityARCloudService
 class ARViewController: UIViewController {
     var accessToken: String?
     var arMode: String?
+    var latitude: Double?
+    var longitude: Double?
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
