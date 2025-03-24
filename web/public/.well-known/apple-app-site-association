@@ -15,5 +15,8 @@
                 ]
             }
         ]
+    },
+    "appclips": {
+        "apps": ["5U237QB3J2.app.graffity.ar-viewer.Clip"]
     }
 }
