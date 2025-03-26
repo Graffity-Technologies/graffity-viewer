@@ -20,3 +20,18 @@
 .btn-app-store {
     margin-right: 12px;
 }
+
+.btn-app-clip {
+    margin-top: 4em;
+    background-color: rgba(25, 166, 182, 1);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    color: white;
+    &:hover,
+    &:active,
+    &.selected {
+        background-color: rgba(25, 166, 182, 0.8);
+    }
+    text-decoration: none;
+}

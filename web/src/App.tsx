@@ -4,6 +4,7 @@ import './App.css';
 import AppStoreImage from './images/App Store.png';
 import GooglePlayImage from './images/Google Play.png';
 import ViewerLogo from './images/graffity_viewer_logo.png';
+import { AppClipLauncher } from './components/AppClipLauncher';
 
 function App() {
   const appStoreURL = 'https://apps.apple.com/th/app/graffity-viewer/id6451207164';
@@ -36,6 +37,7 @@ function App() {
             />
           </a>
         </div>
+        <AppClipLauncher />
       </div>
     </div>
   );
