@@ -4,7 +4,7 @@ import './App.css';
 import AppStoreImage from './images/App Store.png';
 import GooglePlayImage from './images/Google Play.png';
 import ViewerLogo from './images/graffity_viewer_logo.png';
-import { AppClipLauncher } from './components/AppClipLauncher';
+import { NonAppLauncher } from './components/NonAppLauncher';
 
 function App() {
   const appStoreURL = 'https://apps.apple.com/th/app/graffity-viewer/id6451207164';
@@ -19,7 +19,7 @@ function App() {
           width={230}
         />
         <br /><br /><br /><br />
-        <p>App is not installed on your device? <br />Download it from App Store or Google Play.</p>
+        <p>Use our App for the best experience. <br />Download it from App Store or Google Play.</p>
         <br />
         <div className='btn-container'>
           <a className='btn-app-store' href={appStoreURL} target="_blank" rel="noopener noreferrer">
@@ -37,7 +37,7 @@ function App() {
             />
           </a>
         </div>
-        <AppClipLauncher />
+        <NonAppLauncher />
       </div>
     </div>
   );
