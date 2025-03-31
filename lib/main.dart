@@ -54,7 +54,7 @@ final router = GoRouter(
         GoRoute(
           path: 'id',
           builder: (context, state) => MainApp(
-            initToken: state.uri.queryParameters["token"] ?? "",
+            initToken: prefixToken + state.uri.queryParameters["token"]!,
             latitude: double.tryParse(state.uri.queryParameters["lat"] ?? ""),
             longitude: double.tryParse(state.uri.queryParameters["long"] ?? ""),
           ),

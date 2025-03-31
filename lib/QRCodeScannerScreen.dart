@@ -90,7 +90,7 @@ class QRCodeScannerScreenState extends State<QRCodeScannerScreen>
           _isPopScreen = true; // prevent repeated calling pop
         });
         debugPrint('Barcode found! $scannedText');
-        scannedText = widget.prefixToken + scannedText.split(prefixUrl).last;
+        scannedText = widget.prefixToken + scannedText.split(prefixUrl).last.split('?').first;
         Navigator.pop(context, scannedText); // Return the scanned text
       } else {
         // Set the error message for an invalid token
