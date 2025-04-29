@@ -7,10 +7,13 @@
 
 import UIKit
 import GraffityARCloudService
+import CoreLocation
 
 class ARViewController: UIViewController {
     var accessToken: String?
     var arMode: String?
+    var latitude: Double?
+    var longitude: Double?
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -23,15 +26,20 @@ class ARViewController: UIViewController {
         if let accessToken = accessToken {
             var isFrontCamera = false
             var pointCloudMode = false
+            var initialLocation: CLLocation?
             if (arMode == "Face Anchor") {
                 isFrontCamera = true
             } else if (arMode == "Point Cloud & Image Anchor") {
                 pointCloudMode = true
             }
+            if (latitude != nil && longitude != nil) {
+                initialLocation = CLLocation(latitude: latitude ?? 0, longitude: longitude ?? 0)
+            }
             let graffityARCloud = GraffityARCloud(
                 accessToken: accessToken,
                 frontCameraMode: isFrontCamera,
-                pointCloudMode: pointCloudMode
+                pointCloudMode: pointCloudMode,
+                initialLocation: initialLocation
             )
             let arCloudUIView = ARCloudUIView(service: graffityARCloud)
             self.addChild(arCloudUIView)
