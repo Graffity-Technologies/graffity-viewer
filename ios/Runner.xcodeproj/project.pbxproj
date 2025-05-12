@@ -3,18 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
 		24F8DCD61F4BB59FE9C412C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 497EC8484E88165A7E846FC2 /* GoogleService-Info.plist */; };
-		26AF06CB6CCF4A3948FE4CB4 /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D66F1C5DDFCF0A72C1F002 /* Pods_Runner.framework */; };
+		2D29CFD7A15982B22DAAE48B /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 854A8611800E0C44AF2518DA /* Pods_Runner.framework */; };
+		36A9F7A434804DD92FE6D452 /* Pods_RunnerAppClip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A53D50644573F7081B61897 /* Pods_RunnerAppClip.framework */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
 		6CBBBE5F2A5E7140008AC1E0 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBBBE5E2A5E7140008AC1E0 /* ARViewController.swift */; };
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
 		76002DD52AD3F4100042F585 /* GraffityARCloud in Frameworks */ = {isa = PBXBuildFile; productRef = 76002DD42AD3F4100042F585 /* GraffityARCloud */; };
-		7AA58D6D31429F2169E416FA /* Pods_RunnerAppClip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C32B21E4D8A32B1117B1D8D /* Pods_RunnerAppClip.framework */; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
@@ -64,22 +64,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		09090E50360BB82D8A485D74 /* Pods-RunnerAppClip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerAppClip.debug.xcconfig"; path = "Target Support Files/Pods-RunnerAppClip/Pods-RunnerAppClip.debug.xcconfig"; sourceTree = "<group>"; };
+		08A6AB59D27D231218632861 /* Pods-RunnerAppClip.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerAppClip.profile.xcconfig"; path = "Target Support Files/Pods-RunnerAppClip/Pods-RunnerAppClip.profile.xcconfig"; sourceTree = "<group>"; };
+		0BC972A33DB32BA076954099 /* Pods-RunnerAppClip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerAppClip.debug.xcconfig"; path = "Target Support Files/Pods-RunnerAppClip/Pods-RunnerAppClip.debug.xcconfig"; sourceTree = "<group>"; };
 		1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
 		1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
-		1CCF6D1D9A995EC160CB28F3 /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
+		162F6D87913EDAEA7F33C20E /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
+		2A53D50644573F7081B61897 /* Pods_RunnerAppClip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunnerAppClip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppFrameworkInfo.plist; path = Flutter/AppFrameworkInfo.plist; sourceTree = "<group>"; };
 		497EC8484E88165A7E846FC2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Runner/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		4A4BC530661C2B6116D0CBE1 /* Pods-RunnerAppClip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerAppClip.release.xcconfig"; path = "Target Support Files/Pods-RunnerAppClip/Pods-RunnerAppClip.release.xcconfig"; sourceTree = "<group>"; };
-		4C32B21E4D8A32B1117B1D8D /* Pods_RunnerAppClip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunnerAppClip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		566F57DA89A8F44CC3085352 /* Pods-RunnerAppClip.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerAppClip.profile.xcconfig"; path = "Target Support Files/Pods-RunnerAppClip/Pods-RunnerAppClip.profile.xcconfig"; sourceTree = "<group>"; };
 		6CBBBE5E2A5E7140008AC1E0 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		6CF4AA4C2AC5890E0013EF9F /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
-		71D66F1C5DDFCF0A72C1F002 /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
 		74858FAE1ED2DC5600515810 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AFA3C8E1D35360C0083082E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Flutter/Release.xcconfig; sourceTree = "<group>"; };
-		8FF2D1BBE5022400C49BB7F7 /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
+		854A8611800E0C44AF2518DA /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9740EEB21CF90195004384FC /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = Flutter/Debug.xcconfig; sourceTree = "<group>"; };
 		9740EEB31CF90195004384FC /* Generated.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Generated.xcconfig; path = Flutter/Generated.xcconfig; sourceTree = "<group>"; };
 		97C146EE1CF9000F007C117D /* Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,8 +85,10 @@
 		97C146FD1CF9000F007C117D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4EC3F7FB2D123A9E52EBA29 /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
 		BE0735D72D82D88B00B233ED /* RunnerAppClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunnerAppClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C672B02FDCCAF87437926B4B /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
+		DCE9AFEE2952F7B7810090EF /* Pods-RunnerAppClip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerAppClip.release.xcconfig"; path = "Target Support Files/Pods-RunnerAppClip/Pods-RunnerAppClip.release.xcconfig"; sourceTree = "<group>"; };
+		ECDE190012AD8E4F1AD1DC62 /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -118,7 +118,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76002DD52AD3F4100042F585 /* GraffityARCloud in Frameworks */,
-				26AF06CB6CCF4A3948FE4CB4 /* Pods_Runner.framework in Frameworks */,
+				2D29CFD7A15982B22DAAE48B /* Pods_Runner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,23 +126,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AA58D6D31429F2169E416FA /* Pods_RunnerAppClip.framework in Frameworks */,
 				BE07362B2D896E3C00B233ED /* GraffityARCloud in Frameworks */,
+				36A9F7A434804DD92FE6D452 /* Pods_RunnerAppClip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2441FB8AF1F8F106B8B840DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				854A8611800E0C44AF2518DA /* Pods_Runner.framework */,
+				2A53D50644573F7081B61897 /* Pods_RunnerAppClip.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		69E0E4B6D58F764277196362 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8FF2D1BBE5022400C49BB7F7 /* Pods-Runner.debug.xcconfig */,
-				1CCF6D1D9A995EC160CB28F3 /* Pods-Runner.release.xcconfig */,
-				C672B02FDCCAF87437926B4B /* Pods-Runner.profile.xcconfig */,
-				09090E50360BB82D8A485D74 /* Pods-RunnerAppClip.debug.xcconfig */,
-				4A4BC530661C2B6116D0CBE1 /* Pods-RunnerAppClip.release.xcconfig */,
-				566F57DA89A8F44CC3085352 /* Pods-RunnerAppClip.profile.xcconfig */,
+				A4EC3F7FB2D123A9E52EBA29 /* Pods-Runner.debug.xcconfig */,
+				ECDE190012AD8E4F1AD1DC62 /* Pods-Runner.release.xcconfig */,
+				162F6D87913EDAEA7F33C20E /* Pods-Runner.profile.xcconfig */,
+				0BC972A33DB32BA076954099 /* Pods-RunnerAppClip.debug.xcconfig */,
+				DCE9AFEE2952F7B7810090EF /* Pods-RunnerAppClip.release.xcconfig */,
+				08A6AB59D27D231218632861 /* Pods-RunnerAppClip.profile.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -167,7 +176,7 @@
 				97C146EF1CF9000F007C117D /* Products */,
 				69E0E4B6D58F764277196362 /* Pods */,
 				497EC8484E88165A7E846FC2 /* GoogleService-Info.plist */,
-				EB0B50BD332ECD152CD47D69 /* Frameworks */,
+				2441FB8AF1F8F106B8B840DD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -197,15 +206,6 @@
 			path = Runner;
 			sourceTree = "<group>";
 		};
-		EB0B50BD332ECD152CD47D69 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				71D66F1C5DDFCF0A72C1F002 /* Pods_Runner.framework */,
-				4C32B21E4D8A32B1117B1D8D /* Pods_RunnerAppClip.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -213,7 +213,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97C147051CF9000F007C117D /* Build configuration list for PBXNativeTarget "Runner" */;
 			buildPhases = (
-				13B609B967904F2D450235E3 /* [CP] Check Pods Manifest.lock */,
+				07F1CDF10D1696D87C970666 /* [CP] Check Pods Manifest.lock */,
 				9740EEB61CF901F6004384FC /* Run Script */,
 				97C146EA1CF9000F007C117D /* Sources */,
 				97C146EB1CF9000F007C117D /* Frameworks */,
@@ -222,8 +222,8 @@
 				BE0736072D82D88E00B233ED /* Embed App Clips */,
 				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
 				AA835182EE0500328E5571AF /* FlutterFire: "flutterfire upload-crashlytics-symbols" */,
-				6C3ADDB8A27973ACC65B077D /* [CP] Embed Pods Frameworks */,
-				C55FA76B89650B7083C59DAB /* [CP] Copy Pods Resources */,
+				15529D978A3A57A0C29E657D /* [CP] Embed Pods Frameworks */,
+				16BAD441648B9CBF76FD692E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -242,14 +242,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE0736032D82D88E00B233ED /* Build configuration list for PBXNativeTarget "RunnerAppClip" */;
 			buildPhases = (
-				5A7574D89E5A26626028A03E /* [CP] Check Pods Manifest.lock */,
+				B9F928619991657D44251141 /* [CP] Check Pods Manifest.lock */,
 				BE0736152D895E8C00B233ED /* Build Flutter */,
 				BE0735D32D82D88B00B233ED /* Sources */,
 				BE0735D42D82D88B00B233ED /* Frameworks */,
 				BE0735D52D82D88B00B233ED /* Resources */,
 				BE0736162D895F1000B233ED /* Embed Flutter */,
-				2AE6FD17393896D114AD5BB9 /* [CP] Embed Pods Frameworks */,
-				EC59F4FE16605715C1B500EE /* [CP] Copy Pods Resources */,
+				6AEF2BBD1227E21637C9F5A1 /* [CP] Embed Pods Frameworks */,
+				8B4552966661E64B3B982B8A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -269,6 +269,7 @@
 		97C146E61CF9000F007C117D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1510;
 				ORGANIZATIONNAME = "";
@@ -331,7 +332,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		13B609B967904F2D450235E3 /* [CP] Check Pods Manifest.lock */ = {
+		07F1CDF10D1696D87C970666 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -344,7 +345,6 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Runner-checkManifestLockResult.txt",
@@ -354,25 +354,38 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2AE6FD17393896D114AD5BB9 /* [CP] Embed Pods Frameworks */ = {
+		15529D978A3A57A0C29E657D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RunnerAppClip/Pods-RunnerAppClip-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RunnerAppClip/Pods-RunnerAppClip-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RunnerAppClip/Pods-RunnerAppClip-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		16BAD441648B9CBF76FD692E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3B06AD1E1E4923F5004D2608 /* Thin Binary */ = {
@@ -391,47 +404,38 @@
 			shellPath = /bin/sh;
 			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" embed_and_thin\n";
 		};
-		5A7574D89E5A26626028A03E /* [CP] Check Pods Manifest.lock */ = {
+		6AEF2BBD1227E21637C9F5A1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RunnerAppClip-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6C3ADDB8A27973ACC65B077D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RunnerAppClip/Pods-RunnerAppClip-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RunnerAppClip/Pods-RunnerAppClip-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RunnerAppClip/Pods-RunnerAppClip-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B4552966661E64B3B982B8A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RunnerAppClip/Pods-RunnerAppClip-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RunnerAppClip/Pods-RunnerAppClip-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RunnerAppClip/Pods-RunnerAppClip-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9740EEB61CF901F6004384FC /* Run Script */ = {
@@ -466,6 +470,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\n#!/bin/bash\nPATH=${PATH}:$FLUTTER_ROOT/bin:$HOME/.pub-cache/bin\nflutterfire upload-crashlytics-symbols --upload-symbols-script-path=$PODS_ROOT/FirebaseCrashlytics/upload-symbols --platform=ios --apple-project-path=${SRCROOT} --env-platform-name=${PLATFORM_NAME} --env-configuration=${CONFIGURATION} --env-project-dir=${PROJECT_DIR} --env-built-products-dir=${BUILT_PRODUCTS_DIR} --env-dwarf-dsym-folder-path=${DWARF_DSYM_FOLDER_PATH} --env-dwarf-dsym-file-name=${DWARF_DSYM_FILE_NAME} --env-infoplist-path=${INFOPLIST_PATH} --default-config=default\n";
+		};
+		B9F928619991657D44251141 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RunnerAppClip-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 		BE0736152D895E8C00B233ED /* Build Flutter */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -504,48 +530,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" embed_and_thin\n";
-		};
-		C55FA76B89650B7083C59DAB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EC59F4FE16605715C1B500EE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RunnerAppClip/Pods-RunnerAppClip-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RunnerAppClip/Pods-RunnerAppClip-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RunnerAppClip/Pods-RunnerAppClip-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -623,6 +607,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -632,6 +617,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5U237QB3J2;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -663,17 +649,17 @@
 				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5U237QB3J2;
+				CURRENT_PROJECT_VERSION = 34101;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Viewer;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.3.10;
+				MARKETING_VERSION = 3.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.graffity.ar-viewer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -710,6 +696,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -719,6 +706,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5U237QB3J2;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -768,6 +756,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -777,6 +766,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5U237QB3J2;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -810,17 +800,17 @@
 				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5U237QB3J2;
+				CURRENT_PROJECT_VERSION = 34101;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Viewer;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.3.10;
+				MARKETING_VERSION = 3.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.graffity.ar-viewer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -845,17 +835,17 @@
 				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5U237QB3J2;
+				CURRENT_PROJECT_VERSION = 34101;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Viewer;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.3.10;
+				MARKETING_VERSION = 3.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.graffity.ar-viewer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -886,8 +876,7 @@
 				CODE_SIGN_ENTITLEMENTS = RunnerAppClip/RunnerAppClip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 33901;
-				DEVELOPMENT_TEAM = 5U237QB3J2;
+				CURRENT_PROJECT_VERSION = 34101;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -899,12 +888,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 3.4.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.graffity.ar-viewer.Clip";
@@ -912,6 +902,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
@@ -939,8 +930,7 @@
 				CODE_SIGN_ENTITLEMENTS = RunnerAppClip/RunnerAppClip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 33901;
-				DEVELOPMENT_TEAM = 5U237QB3J2;
+				CURRENT_PROJECT_VERSION = 34101;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -952,18 +942,20 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 3.4.1;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.graffity.ar-viewer.Clip";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -989,8 +981,7 @@
 				CODE_SIGN_ENTITLEMENTS = RunnerAppClip/RunnerAppClip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 33901;
-				DEVELOPMENT_TEAM = 5U237QB3J2;
+				CURRENT_PROJECT_VERSION = 34101;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1002,18 +993,20 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 3.4.1;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.graffity.ar-viewer.Clip";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

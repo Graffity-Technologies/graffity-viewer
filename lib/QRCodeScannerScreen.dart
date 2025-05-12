@@ -8,9 +8,9 @@ const prefixUrl = "https://viewer.graffity.app/ar/";
 class QRCodeScannerScreen extends StatefulWidget {
   final String prefixToken;
   const QRCodeScannerScreen({
-    Key? key,
+    super.key,
     required this.prefixToken,
-  }) : super(key: key);
+  });
 
   @override
   QRCodeScannerScreenState createState() => QRCodeScannerScreenState();
@@ -90,7 +90,8 @@ class QRCodeScannerScreenState extends State<QRCodeScannerScreen>
           _isPopScreen = true; // prevent repeated calling pop
         });
         debugPrint('Barcode found! $scannedText');
-        scannedText = widget.prefixToken + scannedText.split(prefixUrl).last.split('?').first;
+        scannedText = widget.prefixToken +
+            scannedText.split(prefixUrl).last.split('?').first;
         Navigator.pop(context, scannedText); // Return the scanned text
       } else {
         // Set the error message for an invalid token

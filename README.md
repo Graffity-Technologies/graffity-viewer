@@ -19,3 +19,9 @@ We create this application on top of Flutter and communicate with Graffity AR na
 1. Change app & build version in `android/local.properties` & `pubspec.yaml`
 2. Generate signed abb with Android Studio
 3. Upload `.aab` to Google Play Console
+
+## Flutterfire error path not found
+```
+dart pub global activate flutterfire_cli
+flutterfire configure
+```

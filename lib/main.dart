@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:io';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+// import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -16,15 +16,15 @@ const prefixToken = "Bearer ";
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Firebase.initializeApp();
-  FlutterError.onError = (errorDetails) {
-    FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
-  };
-  // Pass all uncaught asynchronous errors that aren't handled by the Flutter framework to Crashlytics
-  PlatformDispatcher.instance.onError = (error, stack) {
-    FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
-    return true;
-  };
+  // await Firebase.initializeApp();
+  // FlutterError.onError = (errorDetails) {
+  //   FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
+  // };
+  // // Pass all uncaught asynchronous errors that aren't handled by the Flutter framework to Crashlytics
+  // PlatformDispatcher.instance.onError = (error, stack) {
+  //   FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
+  //   return true;
+  // };
 
   runApp(MaterialApp.router(routerConfig: router));
 }
@@ -70,11 +70,11 @@ class MainApp extends StatefulWidget {
   final double? longitude;
 
   const MainApp({
-    Key? key,
+    super.key,
     required this.initToken,
     this.latitude,
     this.longitude,
-  }) : super(key: key);
+  });
 
   @override
   State<MainApp> createState() => _MainAppState();
@@ -190,12 +190,12 @@ class _MainAppState extends State<MainApp> {
 
 class TextSubmitWidget extends StatefulWidget {
   const TextSubmitWidget({
-    Key? key,
+    super.key,
     required this.onSubmit,
     required this.initToken,
     this.latitude,
     this.longitude,
-  }) : super(key: key);
+  });
 
   final String initToken;
   final double? latitude;
@@ -210,8 +210,8 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
   bool _submitted = false;
 
   static const platformAR = MethodChannel('app.graffity.ar-viewer/ar');
-  Future<void> _navigateToARViewController(
-      String accessToken, String arMode, double? latitude, double? longitude) async {
+  Future<void> _navigateToARViewController(String accessToken, String arMode,
+      double? latitude, double? longitude) async {
     await platformAR.invokeMethod('OpenAR', {
       'accessToken': accessToken,
       'arMode': arMode,
@@ -266,7 +266,8 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
     final enteredValue = _controller.value.text;
     if (_errorText == null && enteredValue.startsWith(prefixToken)) {
       widget.onSubmit(_controller.value.text);
-      _navigateToARViewController(_controller.text, defaultArMode!, widget.latitude, widget.longitude);
+      _navigateToARViewController(
+          _controller.text, defaultArMode!, widget.latitude, widget.longitude);
     }
   }
 
