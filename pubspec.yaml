@@ -1,7 +1,7 @@
 name: graffity_viewer
 description: Graffity Viewer Application.
 publish_to: "none"
-version: 3.4.1+34101
+version: 3.4.2+34201
 
 environment:
   sdk: ">=3.1.0 <4.0.0"

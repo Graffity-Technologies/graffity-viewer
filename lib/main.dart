@@ -54,7 +54,7 @@ final router = GoRouter(
         GoRoute(
           path: 'id',
           builder: (context, state) => MainApp(
-            initToken: prefixToken + state.uri.queryParameters["token"]!,
+            initToken: prefixToken + (state.uri.queryParameters["token"] ?? ""),
             latitude: double.tryParse(state.uri.queryParameters["lat"] ?? ""),
             longitude: double.tryParse(state.uri.queryParameters["long"] ?? ""),
           ),
@@ -87,6 +87,65 @@ class _MainAppState extends State<MainApp> {
       'https://developers.graffity.tech/quick-start/graffity-console#create-access-token');
   final Uri _consoleUrl = Uri.parse("https://console.graffity.tech");
 
+  static const platformAR = MethodChannel('app.graffity.ar-viewer/ar');
+  String _initToken = "";
+  double? _latitude;
+  double? _longitude;
+  bool _isLoading = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _initToken = widget.initToken;
+    _latitude = widget.latitude;
+    _longitude = widget.longitude;
+    debugPrint('InitToken: $_initToken');
+    debugPrint('Latitude: $_latitude');
+    debugPrint('Longitude: $_longitude');
+
+    // If any parameters are null, try to get them from native storage
+    if (_initToken.isEmpty || _latitude == null || _longitude == null) {
+      _isLoading = true;
+      _getAppClipParameters().then((_) {
+        setState(() {
+          _isLoading = false;
+        });
+      });
+    }
+  }
+
+  Future<void> _getAppClipParameters() async {
+    try {
+      final result = await platformAR.invokeMethod('GetAppClipParameters');
+
+      // Handle the result which could be a Map<Object?, Object?> or null
+      if (result != null) {
+        // Convert to Map<String, String>
+        final Map<String, String> params =
+            Map<String, String>.from(result as Map);
+
+        setState(() {
+          if (_initToken.isEmpty && params['token'] != null) {
+            _initToken = prefixToken + params['token']!;
+            debugPrint('📱 Retrieved token from native: $_initToken');
+          }
+
+          if (_latitude == null && params['lat'] != null) {
+            _latitude = double.tryParse(params['lat']!);
+            debugPrint('📱 Retrieved latitude from native: $_latitude');
+          }
+
+          if (_longitude == null && params['long'] != null) {
+            _longitude = double.tryParse(params['long']!);
+            debugPrint('📱 Retrieved longitude from native: $_longitude');
+          }
+        });
+      }
+    } catch (e) {
+      debugPrint('Error getting App Clip parameters: $e');
+    }
+  }
+
   Future<void> _launchViewerGithubUrl() async {
     if (!await launchUrl(_githubCloneUrl)) {
       throw Exception('Could not launch $_githubCloneUrl');
@@ -110,78 +169,83 @@ class _MainAppState extends State<MainApp> {
     return MaterialApp(
       home: Scaffold(
         body: SafeArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                children: [
-                  const SizedBox(height: 32),
-                  const Image(
-                    image: AssetImage('assets/images/graffity_viewer_logo.png'),
-                    width: 200,
-                    fit: BoxFit.cover,
-                  ),
-                  const SizedBox(height: 16),
-                  InkWell(
-                    onTap: () {
-                      _launchConsoleUrl();
-                    },
-                    child: const Text(
-                      'AR Viewer for Graffity Console',
-                      style: TextStyle(
-                          fontSize: 14.0, fontWeight: FontWeight.w300),
-                    ),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 32),
-                child: TextSubmitWidget(
-                  initToken: widget.initToken,
-                  latitude: widget.latitude,
-                  longitude: widget.longitude,
-                  onSubmit: (value) => print(""),
-                ),
-              ),
-              Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 12),
-                    child: InkWell(
-                      onTap: () {
-                        _launchDocTokenUrl();
-                      },
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text('Where to get a project access token?'),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 16),
-                    child: InkWell(
-                      onTap: () {
-                        _launchViewerGithubUrl();
-                      },
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text('Clone this app from GitHub'),
-                          SizedBox(width: 5),
-                          Icon(
-                            Icons.code,
-                            size: 16,
+          child: _isLoading
+              ? const Center(child: CircularProgressIndicator())
+              : Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        const SizedBox(height: 32),
+                        const Image(
+                          image: AssetImage(
+                              'assets/images/graffity_viewer_logo.png'),
+                          width: 200,
+                          fit: BoxFit.cover,
+                        ),
+                        const SizedBox(height: 16),
+                        InkWell(
+                          onTap: () {
+                            _launchConsoleUrl();
+                          },
+                          child: const Text(
+                            'AR Viewer for Graffity Console',
+                            style: TextStyle(
+                                fontSize: 14.0, fontWeight: FontWeight.w300),
                           ),
-                        ],
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 32),
+                      child: TextSubmitWidget(
+                        initToken: _initToken.isNotEmpty
+                            ? _initToken
+                            : widget.initToken,
+                        latitude: _latitude ?? widget.latitude,
+                        longitude: _longitude ?? widget.longitude,
+                        onSubmit: (value) => print(""),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ],
-          ),
+                    Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 12),
+                          child: InkWell(
+                            onTap: () {
+                              _launchDocTokenUrl();
+                            },
+                            child: const Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text('Where to get a project access token?'),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 16),
+                          child: InkWell(
+                            onTap: () {
+                              _launchViewerGithubUrl();
+                            },
+                            child: const Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text('Clone this app from GitHub'),
+                                SizedBox(width: 5),
+                                Icon(
+                                  Icons.code,
+                                  size: 16,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
         ),
       ),
     );
@@ -212,6 +276,10 @@ class _TextSubmitWidgetState extends State<TextSubmitWidget> {
   static const platformAR = MethodChannel('app.graffity.ar-viewer/ar');
   Future<void> _navigateToARViewController(String accessToken, String arMode,
       double? latitude, double? longitude) async {
+    debugPrint('accessToken: $accessToken');
+    debugPrint('arMode: $arMode');
+    debugPrint('latitude: $latitude');
+    debugPrint('longitude: $longitude');
     await platformAR.invokeMethod('OpenAR', {
       'accessToken': accessToken,
       'arMode': arMode,
