@@ -80,7 +80,7 @@ const NonAppLauncher = () => {
     };
 
     return <div>
-        <p>or</p>
+        <p>After Installed</p>
         <div style={{ marginTop: "25px" }}>
             <a href="#" onClick={handleClick} className="btn-app-clip">Launch AR Experience</a>
         </div>
