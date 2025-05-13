@@ -5,7 +5,7 @@ function iOS() {
 }
 
 const NonAppLauncher = () => {
-    if (!iOS()) return <></>
+    // if (!iOS()) return <></>
     // TODO: add web sdk launcher here
 
     const path = window.location.pathname
@@ -13,12 +13,13 @@ const NonAppLauncher = () => {
     const urlParams = new URLSearchParams(window.location.search);
     urlParams.set('token', token)
 
-    const link = defaultUrl + "&" + urlParams.toString()
+    // const link = defaultUrl + "&" + urlParams.toString()
+    const link = window.location.href
 
     return <div>
         <p>or</p>
         <div style={{ marginTop: "25px" }}>
-            <a href={link} className="btn-app-clip">Launch App Clip</a>
+            <a href={link} target="_blank" className="btn-app-clip">Launch AR Experience</a>
         </div>
     </div>
 }
