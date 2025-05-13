@@ -43,8 +43,9 @@ const NonAppLauncher = () => {
                 // iOS uses custom URL scheme or universal links
                 return deepLink;
             case 'android':
-                // Android uses intent scheme
-                return deepLink;
+                // Android uses intent scheme with fallback
+                const encodedDeepLink = encodeURIComponent(`https://viewer.graffity.app/ar/${token}`);
+                return `intent://viewer.graffity.app/ar/${token}?${urlParams.toString()}#Intent;scheme=https;package=com.graffity.ar_viewer;S.browser_fallback_url=${encodeURIComponent(fallbackUrl)};end`;
             default:
                 // Fall back to web URL for desktop or unknown
                 return webUrl;
