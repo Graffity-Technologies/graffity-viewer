@@ -19,7 +19,7 @@ const NonAppLauncher = () => {
     return <div>
         <p>or</p>
         <div style={{ marginTop: "25px" }}>
-            <a href={link} target="_blank" className="btn-app-clip">Launch AR Experience</a>
+            <a href={link} className="btn-app-clip">Launch AR Experience</a>
         </div>
     </div>
 }
