@@ -3,6 +3,9 @@ We create this application on top of Flutter and communicate with Graffity AR na
 
 ![Alt text](cover.png "Cover image")
 
+## App Clip Debug
+https://developer.apple.com/documentation/appclip/testing-the-launch-experience-of-your-app-clip#Debug-your-App-Clip
+
 ## Build & Distribute
 ### iOS
 0. Reference https://docs.flutter.dev/deployment/ios

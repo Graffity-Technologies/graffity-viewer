@@ -50,13 +50,6 @@
             ReferencedContainer = "container:Runner.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "_XCAppClipURL"
-            value = "https://viewer.graffity.app/id?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1IjoiVGhlIEJhc2UgUGhldGthc2VtIiwicCI6IjYzMGVkMDgyNmQyOGFhNDk3M2MzNTI1NiIsIm8iOiI2NDkyYmVlZjZmYjNlYTYwYzE4NjZmNTEiLCJleHAiOjE3NDcyMzY2MjAsImlhdCI6MTc0NzE1MDIyMH0.OzhKf651l_H3-0YVRnBAXP5WrxlNCjj89V6TxjmafhM&amp;lat=13.715271166383648&amp;long=100.44727636517449"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
