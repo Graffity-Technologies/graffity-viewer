@@ -28,10 +28,27 @@
     border-radius: 0.5rem;
     border: none;
     color: white;
+
     &:hover,
     &:active,
     &.selected {
         background-color: rgba(25, 166, 182, 0.8);
     }
+
     text-decoration: none;
+}
+
+.ios-open-instruction {
+    margin-top: 1em;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 0.5rem;
+    color: #212529;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.ios-open-instruction strong {
+    color: rgba(25, 166, 182, 1);
 }

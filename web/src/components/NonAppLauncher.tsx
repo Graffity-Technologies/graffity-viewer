@@ -40,9 +40,9 @@ const NonAppLauncher = () => {
     const getLinkForPlatform = () => {
         switch (platform) {
             case 'ios':
-                // iOS uses Universal Links (Apple App Site Association)
-                // This should match the format in your applinks:viewer.graffity.app association
-                return `https://viewer.graffity.app/ar/${token}?${urlParams.toString()}`;
+                // For iOS, we'll use the custom URL scheme directly
+                // This has better success in browser contexts than Universal Links
+                return `graffityviewer://ar/${token}?${urlParams.toString()}`;
             case 'android':
                 // Android uses intent scheme with fallback
                 const encodedDeepLink = encodeURIComponent(`https://viewer.graffity.app/ar/${token}`);
@@ -107,7 +107,13 @@ const NonAppLauncher = () => {
     return <div>
         <p>After Installed</p>
         <div style={{ marginTop: "25px" }}>
-            <a href="#" onClick={handleClick} className="btn-app-clip">Launch AR Experience</a>
+            {platform === 'ios' ? (
+                <p className="ios-open-instruction">
+                    Please tap the <strong>"Open"</strong> button at the top right corner to launch the app.
+                </p>
+            ) : (
+                <a href="#" onClick={handleClick} className="btn-app-clip">Launch AR Experience</a>
+            )}
         </div>
     </div>
 }
