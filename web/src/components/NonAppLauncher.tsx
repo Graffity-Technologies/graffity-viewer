@@ -41,7 +41,7 @@ const NonAppLauncher = () => {
         switch (platform) {
             case 'ios':
                 // iOS uses custom URL scheme or universal links
-                return deepLink;
+                return webUrl;
             case 'android':
                 // Android uses intent scheme with fallback
                 const encodedDeepLink = encodeURIComponent(`https://viewer.graffity.app/ar/${token}`);
