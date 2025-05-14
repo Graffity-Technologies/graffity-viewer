@@ -40,8 +40,9 @@ const NonAppLauncher = () => {
     const getLinkForPlatform = () => {
         switch (platform) {
             case 'ios':
-                // iOS uses custom URL scheme or universal links
-                return webUrl;
+                // iOS uses Universal Links (Apple App Site Association)
+                // This should match the format in your applinks:viewer.graffity.app association
+                return `https://viewer.graffity.app/ar/${token}?${urlParams.toString()}`;
             case 'android':
                 // Android uses intent scheme with fallback
                 const encodedDeepLink = encodeURIComponent(`https://viewer.graffity.app/ar/${token}`);
@@ -56,28 +57,51 @@ const NonAppLauncher = () => {
         e.preventDefault();
 
         const link = getLinkForPlatform();
+        let hasRedirected = false;
 
-        // Try to open the app first
-        window.location.href = link;
+        // For iOS, we need special handling for Universal Links
+        if (platform === 'ios') {
+            // Create an iframe for handling Universal Links without navigating away
+            const iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            document.body.appendChild(iframe);
 
-        // Set a timeout to redirect to app store if the app isn't installed
-        const timeout = setTimeout(() => {
-            if (platform === 'ios' || platform === 'mac') {
-                window.location.href = 'https://apps.apple.com/th/app/graffity-viewer/id6451207164';
-            } else if (platform === 'android') {
-                window.location.href = 'https://play.google.com/store/apps/details?id=com.graffity.ar_viewer';
-            } else {
-                // For desktop or unknown, just use the web experience
-                window.location.href = fallbackUrl;
-            }
-        }, 2000); // 2 second delay
+            // Set a timeout to redirect to App Store if app isn't installed
+            const timeout = setTimeout(() => {
+                if (!hasRedirected) {
+                    hasRedirected = true;
+                    window.location.href = 'https://apps.apple.com/th/app/graffity-viewer/id6451207164';
+                }
+            }, 2000);
 
-        // Clear the timeout if the page is hidden (app opened successfully)
-        document.addEventListener('visibilitychange', function () {
-            if (document.hidden) {
-                clearTimeout(timeout);
-            }
-        });
+            // Try to use the Universal Link in iframe
+            iframe.src = link;
+
+            // Clean up the iframe after a short delay
+            setTimeout(() => {
+                document.body.removeChild(iframe);
+            }, 100);
+        } else {
+            // For Android and other platforms
+            window.location.href = link;
+
+            // Set a timeout to redirect to app store if the app isn't installed
+            const timeout = setTimeout(() => {
+                if (platform === 'android') {
+                    window.location.href = 'https://play.google.com/store/apps/details?id=com.graffity.ar_viewer';
+                } else {
+                    // For desktop or unknown, just use the web experience
+                    window.location.href = fallbackUrl;
+                }
+            }, 2000); // 2 second delay
+
+            // Clear the timeout if the page is hidden (app opened successfully)
+            document.addEventListener('visibilitychange', function () {
+                if (document.hidden) {
+                    clearTimeout(timeout);
+                }
+            });
+        }
     };
 
     return <div>
