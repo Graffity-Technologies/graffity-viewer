@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
-const prefixUrl = "https://viewer.graffity.app/ar/";
+const prefixUrl = "https://viewer.graffity.app/id";
 
 class QRCodeScannerScreen extends StatefulWidget {
   final String prefixToken;
@@ -90,8 +90,24 @@ class QRCodeScannerScreenState extends State<QRCodeScannerScreen>
           _isPopScreen = true; // prevent repeated calling pop
         });
         debugPrint('Barcode found! $scannedText');
-        scannedText = widget.prefixToken +
-            scannedText.split(prefixUrl).last.split('?').first;
+
+        // Extract token value from URL query parameters
+        try {
+          final Uri uri = Uri.parse(scannedText);
+          final String? tokenValue = uri.queryParameters['token'];
+          if (tokenValue != null) {
+            scannedText = widget.prefixToken + tokenValue;
+          }
+        } catch (e) {
+          // Handle the error if the URL parsing fails
+          debugPrint('Error parsing URL: $e');
+          setState(() {
+            errorMessage =
+                'Invalid QR Code. Please scan QR Code from a project page in Graffity Console';
+          });
+          return;
+        }
+
         Navigator.pop(context, scannedText); // Return the scanned text
       } else {
         // Set the error message for an invalid token
