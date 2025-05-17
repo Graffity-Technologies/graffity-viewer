@@ -1,0 +1,1033 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		766244B02DD8BDE30028BF59 /* GraffityARCloud in Frameworks */ = {isa = PBXBuildFile; productRef = 766244AF2DD8BDE30028BF59 /* GraffityARCloud */; };
+		7685B42C2DD8ECEB005ACF10 /* Graffity Viewer AppClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 7685B4022DD8ECE9005ACF10 /* Graffity Viewer AppClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7685B43D2DD8F4EA005ACF10 /* GraffityARCloud in Frameworks */ = {isa = PBXBuildFile; productRef = 7685B43C2DD8F4EA005ACF10 /* GraffityARCloud */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7662448E2DD8BD270028BF59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7662446F2DD8BD240028BF59 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 766244762DD8BD240028BF59;
+			remoteInfo = "Graffity Viewer";
+		};
+		766244982DD8BD270028BF59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7662446F2DD8BD240028BF59 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 766244762DD8BD240028BF59;
+			remoteInfo = "Graffity Viewer";
+		};
+		7685B4192DD8ECEB005ACF10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7662446F2DD8BD240028BF59 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7685B4012DD8ECE9005ACF10;
+			remoteInfo = "Graffity Viewer AppClip";
+		};
+		7685B4232DD8ECEB005ACF10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7662446F2DD8BD240028BF59 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7685B4012DD8ECE9005ACF10;
+			remoteInfo = "Graffity Viewer AppClip";
+		};
+		7685B42A2DD8ECEB005ACF10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7662446F2DD8BD240028BF59 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7685B4012DD8ECE9005ACF10;
+			remoteInfo = "Graffity Viewer AppClip";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7685B4312DD8ECEB005ACF10 /* Embed App Clips */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
+			dstSubfolderSpec = 16;
+			files = (
+				7685B42C2DD8ECEB005ACF10 /* Graffity Viewer AppClip.app in Embed App Clips */,
+			);
+			name = "Embed App Clips";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		766244772DD8BD240028BF59 /* Graffity Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Graffity Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7662448D2DD8BD270028BF59 /* Graffity ViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Graffity ViewerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		766244972DD8BD270028BF59 /* Graffity ViewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Graffity ViewerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7685B4022DD8ECE9005ACF10 /* Graffity Viewer AppClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Graffity Viewer AppClip.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7685B4182DD8ECEB005ACF10 /* Graffity Viewer AppClipTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Graffity Viewer AppClipTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7685B4222DD8ECEB005ACF10 /* Graffity Viewer AppClipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Graffity Viewer AppClipUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		7662449F2DD8BD270028BF59 /* Exceptions for "Graffity Viewer" folder in "Graffity Viewer" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 766244762DD8BD240028BF59 /* Graffity Viewer */;
+		};
+		7685B4302DD8ECEB005ACF10 /* Exceptions for "Graffity Viewer AppClip" folder in "Graffity Viewer AppClip" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 7685B4012DD8ECE9005ACF10 /* Graffity Viewer AppClip */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		766244792DD8BD240028BF59 /* Graffity Viewer */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				7662449F2DD8BD270028BF59 /* Exceptions for "Graffity Viewer" folder in "Graffity Viewer" target */,
+			);
+			path = "Graffity Viewer";
+			sourceTree = "<group>";
+		};
+		766244902DD8BD270028BF59 /* Graffity ViewerTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Graffity ViewerTests";
+			sourceTree = "<group>";
+		};
+		7662449A2DD8BD270028BF59 /* Graffity ViewerUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Graffity ViewerUITests";
+			sourceTree = "<group>";
+		};
+		7685B4032DD8ECE9005ACF10 /* Graffity Viewer AppClip */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				7685B4302DD8ECEB005ACF10 /* Exceptions for "Graffity Viewer AppClip" folder in "Graffity Viewer AppClip" target */,
+			);
+			path = "Graffity Viewer AppClip";
+			sourceTree = "<group>";
+		};
+		7685B41B2DD8ECEB005ACF10 /* Graffity Viewer AppClipTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Graffity Viewer AppClipTests";
+			sourceTree = "<group>";
+		};
+		7685B4252DD8ECEB005ACF10 /* Graffity Viewer AppClipUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Graffity Viewer AppClipUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		766244742DD8BD240028BF59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				766244B02DD8BDE30028BF59 /* GraffityARCloud in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7662448A2DD8BD270028BF59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		766244942DD8BD270028BF59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7685B3FF2DD8ECE9005ACF10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7685B43D2DD8F4EA005ACF10 /* GraffityARCloud in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7685B4152DD8ECEB005ACF10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7685B41F2DD8ECEB005ACF10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7662446E2DD8BD240028BF59 = {
+			isa = PBXGroup;
+			children = (
+				766244792DD8BD240028BF59 /* Graffity Viewer */,
+				766244902DD8BD270028BF59 /* Graffity ViewerTests */,
+				7662449A2DD8BD270028BF59 /* Graffity ViewerUITests */,
+				7685B4032DD8ECE9005ACF10 /* Graffity Viewer AppClip */,
+				7685B41B2DD8ECEB005ACF10 /* Graffity Viewer AppClipTests */,
+				7685B4252DD8ECEB005ACF10 /* Graffity Viewer AppClipUITests */,
+				7685B43B2DD8F4EA005ACF10 /* Frameworks */,
+				766244782DD8BD240028BF59 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		766244782DD8BD240028BF59 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				766244772DD8BD240028BF59 /* Graffity Viewer.app */,
+				7662448D2DD8BD270028BF59 /* Graffity ViewerTests.xctest */,
+				766244972DD8BD270028BF59 /* Graffity ViewerUITests.xctest */,
+				7685B4022DD8ECE9005ACF10 /* Graffity Viewer AppClip.app */,
+				7685B4182DD8ECEB005ACF10 /* Graffity Viewer AppClipTests.xctest */,
+				7685B4222DD8ECEB005ACF10 /* Graffity Viewer AppClipUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7685B43B2DD8F4EA005ACF10 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		766244762DD8BD240028BF59 /* Graffity Viewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 766244A02DD8BD270028BF59 /* Build configuration list for PBXNativeTarget "Graffity Viewer" */;
+			buildPhases = (
+				766244732DD8BD240028BF59 /* Sources */,
+				766244742DD8BD240028BF59 /* Frameworks */,
+				766244752DD8BD240028BF59 /* Resources */,
+				7685B4312DD8ECEB005ACF10 /* Embed App Clips */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7685B42B2DD8ECEB005ACF10 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				766244792DD8BD240028BF59 /* Graffity Viewer */,
+			);
+			name = "Graffity Viewer";
+			packageProductDependencies = (
+				766244AF2DD8BDE30028BF59 /* GraffityARCloud */,
+			);
+			productName = "Graffity Viewer";
+			productReference = 766244772DD8BD240028BF59 /* Graffity Viewer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7662448C2DD8BD270028BF59 /* Graffity ViewerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 766244A52DD8BD270028BF59 /* Build configuration list for PBXNativeTarget "Graffity ViewerTests" */;
+			buildPhases = (
+				766244892DD8BD270028BF59 /* Sources */,
+				7662448A2DD8BD270028BF59 /* Frameworks */,
+				7662448B2DD8BD270028BF59 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7662448F2DD8BD270028BF59 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				766244902DD8BD270028BF59 /* Graffity ViewerTests */,
+			);
+			name = "Graffity ViewerTests";
+			packageProductDependencies = (
+			);
+			productName = "Graffity ViewerTests";
+			productReference = 7662448D2DD8BD270028BF59 /* Graffity ViewerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		766244962DD8BD270028BF59 /* Graffity ViewerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 766244A82DD8BD270028BF59 /* Build configuration list for PBXNativeTarget "Graffity ViewerUITests" */;
+			buildPhases = (
+				766244932DD8BD270028BF59 /* Sources */,
+				766244942DD8BD270028BF59 /* Frameworks */,
+				766244952DD8BD270028BF59 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				766244992DD8BD270028BF59 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				7662449A2DD8BD270028BF59 /* Graffity ViewerUITests */,
+			);
+			name = "Graffity ViewerUITests";
+			packageProductDependencies = (
+			);
+			productName = "Graffity ViewerUITests";
+			productReference = 766244972DD8BD270028BF59 /* Graffity ViewerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		7685B4012DD8ECE9005ACF10 /* Graffity Viewer AppClip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7685B42D2DD8ECEB005ACF10 /* Build configuration list for PBXNativeTarget "Graffity Viewer AppClip" */;
+			buildPhases = (
+				7685B3FE2DD8ECE9005ACF10 /* Sources */,
+				7685B3FF2DD8ECE9005ACF10 /* Frameworks */,
+				7685B4002DD8ECE9005ACF10 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				7685B4032DD8ECE9005ACF10 /* Graffity Viewer AppClip */,
+			);
+			name = "Graffity Viewer AppClip";
+			packageProductDependencies = (
+				7685B43C2DD8F4EA005ACF10 /* GraffityARCloud */,
+			);
+			productName = "Graffity Viewer AppClip";
+			productReference = 7685B4022DD8ECE9005ACF10 /* Graffity Viewer AppClip.app */;
+			productType = "com.apple.product-type.application.on-demand-install-capable";
+		};
+		7685B4172DD8ECEB005ACF10 /* Graffity Viewer AppClipTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7685B4322DD8ECEB005ACF10 /* Build configuration list for PBXNativeTarget "Graffity Viewer AppClipTests" */;
+			buildPhases = (
+				7685B4142DD8ECEB005ACF10 /* Sources */,
+				7685B4152DD8ECEB005ACF10 /* Frameworks */,
+				7685B4162DD8ECEB005ACF10 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7685B41A2DD8ECEB005ACF10 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				7685B41B2DD8ECEB005ACF10 /* Graffity Viewer AppClipTests */,
+			);
+			name = "Graffity Viewer AppClipTests";
+			packageProductDependencies = (
+			);
+			productName = "Graffity Viewer AppClipTests";
+			productReference = 7685B4182DD8ECEB005ACF10 /* Graffity Viewer AppClipTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7685B4212DD8ECEB005ACF10 /* Graffity Viewer AppClipUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7685B4352DD8ECEB005ACF10 /* Build configuration list for PBXNativeTarget "Graffity Viewer AppClipUITests" */;
+			buildPhases = (
+				7685B41E2DD8ECEB005ACF10 /* Sources */,
+				7685B41F2DD8ECEB005ACF10 /* Frameworks */,
+				7685B4202DD8ECEB005ACF10 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7685B4242DD8ECEB005ACF10 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				7685B4252DD8ECEB005ACF10 /* Graffity Viewer AppClipUITests */,
+			);
+			name = "Graffity Viewer AppClipUITests";
+			packageProductDependencies = (
+			);
+			productName = "Graffity Viewer AppClipUITests";
+			productReference = 7685B4222DD8ECEB005ACF10 /* Graffity Viewer AppClipUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7662446F2DD8BD240028BF59 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					766244762DD8BD240028BF59 = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					7662448C2DD8BD270028BF59 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 766244762DD8BD240028BF59;
+					};
+					766244962DD8BD270028BF59 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 766244762DD8BD240028BF59;
+					};
+					7685B4012DD8ECE9005ACF10 = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					7685B4172DD8ECEB005ACF10 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 7685B4012DD8ECE9005ACF10;
+					};
+					7685B4212DD8ECEB005ACF10 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 7685B4012DD8ECE9005ACF10;
+					};
+				};
+			};
+			buildConfigurationList = 766244722DD8BD240028BF59 /* Build configuration list for PBXProject "Graffity Viewer" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7662446E2DD8BD240028BF59;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				766244AE2DD8BDE30028BF59 /* XCRemoteSwiftPackageReference "graffity-arcloud-ios" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 766244782DD8BD240028BF59 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				766244762DD8BD240028BF59 /* Graffity Viewer */,
+				7662448C2DD8BD270028BF59 /* Graffity ViewerTests */,
+				766244962DD8BD270028BF59 /* Graffity ViewerUITests */,
+				7685B4012DD8ECE9005ACF10 /* Graffity Viewer AppClip */,
+				7685B4172DD8ECEB005ACF10 /* Graffity Viewer AppClipTests */,
+				7685B4212DD8ECEB005ACF10 /* Graffity Viewer AppClipUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		766244752DD8BD240028BF59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7662448B2DD8BD270028BF59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		766244952DD8BD270028BF59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7685B4002DD8ECE9005ACF10 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7685B4162DD8ECEB005ACF10 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7685B4202DD8ECEB005ACF10 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		766244732DD8BD240028BF59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		766244892DD8BD270028BF59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		766244932DD8BD270028BF59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7685B3FE2DD8ECE9005ACF10 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7685B4142DD8ECEB005ACF10 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7685B41E2DD8ECEB005ACF10 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7662448F2DD8BD270028BF59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 766244762DD8BD240028BF59 /* Graffity Viewer */;
+			targetProxy = 7662448E2DD8BD270028BF59 /* PBXContainerItemProxy */;
+		};
+		766244992DD8BD270028BF59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 766244762DD8BD240028BF59 /* Graffity Viewer */;
+			targetProxy = 766244982DD8BD270028BF59 /* PBXContainerItemProxy */;
+		};
+		7685B41A2DD8ECEB005ACF10 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7685B4012DD8ECE9005ACF10 /* Graffity Viewer AppClip */;
+			targetProxy = 7685B4192DD8ECEB005ACF10 /* PBXContainerItemProxy */;
+		};
+		7685B4242DD8ECEB005ACF10 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7685B4012DD8ECE9005ACF10 /* Graffity Viewer AppClip */;
+			targetProxy = 7685B4232DD8ECEB005ACF10 /* PBXContainerItemProxy */;
+		};
+		7685B42B2DD8ECEB005ACF10 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7685B4012DD8ECE9005ACF10 /* Graffity Viewer AppClip */;
+			targetProxy = 7685B42A2DD8ECEB005ACF10 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		766244A12DD8BD270028BF59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5U237QB3J2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Graffity Viewer/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Viewer;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.4.4;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.graffity.ar-viewer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		766244A22DD8BD270028BF59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5U237QB3J2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Graffity Viewer/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Viewer;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.4.4;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.graffity.ar-viewer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		766244A32DD8BD270028BF59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5U237QB3J2;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		766244A42DD8BD270028BF59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5U237QB3J2;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		766244A62DD8BD270028BF59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5U237QB3J2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.graffity.ar-viewer.Graffity-ViewerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Graffity Viewer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Graffity Viewer";
+			};
+			name = Debug;
+		};
+		766244A72DD8BD270028BF59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5U237QB3J2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.graffity.ar-viewer.Graffity-ViewerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Graffity Viewer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Graffity Viewer";
+			};
+			name = Release;
+		};
+		766244A92DD8BD270028BF59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5U237QB3J2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.graffity.ar-viewer.Graffity-ViewerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Graffity Viewer";
+			};
+			name = Debug;
+		};
+		766244AA2DD8BD270028BF59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5U237QB3J2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.graffity.ar-viewer.Graffity-ViewerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Graffity Viewer";
+			};
+			name = Release;
+		};
+		7685B42E2DD8ECEB005ACF10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Graffity Viewer AppClip/Graffity_Viewer_AppClip.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5U237QB3J2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Graffity Viewer AppClip/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "AR Viewer";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.4.4;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.graffity.ar-viewer.Clip";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7685B42F2DD8ECEB005ACF10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Graffity Viewer AppClip/Graffity_Viewer_AppClip.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5U237QB3J2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Graffity Viewer AppClip/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "AR Viewer";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.4.4;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.graffity.ar-viewer.Clip";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7685B4332DD8ECEB005ACF10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5U237QB3J2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.graffity.ar-viewer.Graffity-Viewer-AppClipTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Graffity Viewer AppClip.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Graffity Viewer AppClip";
+			};
+			name = Debug;
+		};
+		7685B4342DD8ECEB005ACF10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5U237QB3J2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.graffity.ar-viewer.Graffity-Viewer-AppClipTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Graffity Viewer AppClip.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Graffity Viewer AppClip";
+			};
+			name = Release;
+		};
+		7685B4362DD8ECEB005ACF10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5U237QB3J2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.graffity.ar-viewer.Graffity-Viewer-AppClipUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Graffity Viewer AppClip";
+			};
+			name = Debug;
+		};
+		7685B4372DD8ECEB005ACF10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5U237QB3J2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.graffity.ar-viewer.Graffity-Viewer-AppClipUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Graffity Viewer AppClip";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		766244722DD8BD240028BF59 /* Build configuration list for PBXProject "Graffity Viewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				766244A32DD8BD270028BF59 /* Debug */,
+				766244A42DD8BD270028BF59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		766244A02DD8BD270028BF59 /* Build configuration list for PBXNativeTarget "Graffity Viewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				766244A12DD8BD270028BF59 /* Debug */,
+				766244A22DD8BD270028BF59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		766244A52DD8BD270028BF59 /* Build configuration list for PBXNativeTarget "Graffity ViewerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				766244A62DD8BD270028BF59 /* Debug */,
+				766244A72DD8BD270028BF59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		766244A82DD8BD270028BF59 /* Build configuration list for PBXNativeTarget "Graffity ViewerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				766244A92DD8BD270028BF59 /* Debug */,
+				766244AA2DD8BD270028BF59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7685B42D2DD8ECEB005ACF10 /* Build configuration list for PBXNativeTarget "Graffity Viewer AppClip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7685B42E2DD8ECEB005ACF10 /* Debug */,
+				7685B42F2DD8ECEB005ACF10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7685B4322DD8ECEB005ACF10 /* Build configuration list for PBXNativeTarget "Graffity Viewer AppClipTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7685B4332DD8ECEB005ACF10 /* Debug */,
+				7685B4342DD8ECEB005ACF10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7685B4352DD8ECEB005ACF10 /* Build configuration list for PBXNativeTarget "Graffity Viewer AppClipUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7685B4362DD8ECEB005ACF10 /* Debug */,
+				7685B4372DD8ECEB005ACF10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		766244AE2DD8BDE30028BF59 /* XCRemoteSwiftPackageReference "graffity-arcloud-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Graffity-Technologies/graffity-arcloud-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.5.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		766244AF2DD8BDE30028BF59 /* GraffityARCloud */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 766244AE2DD8BDE30028BF59 /* XCRemoteSwiftPackageReference "graffity-arcloud-ios" */;
+			productName = GraffityARCloud;
+		};
+		7685B43C2DD8F4EA005ACF10 /* GraffityARCloud */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 766244AE2DD8BDE30028BF59 /* XCRemoteSwiftPackageReference "graffity-arcloud-ios" */;
+			productName = GraffityARCloud;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 7662446F2DD8BD240028BF59 /* Project object */;
+}
