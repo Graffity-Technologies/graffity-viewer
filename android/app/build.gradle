@@ -55,18 +55,20 @@ android {
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
         minSdkVersion 28
         targetSdkVersion 34
-        versionCode 33601
-        versionName "3.3.6"
+        versionCode 34301
+        versionName "3.4.3"
     }
 
     buildTypes {
         debug {
             minifyEnabled true
             shrinkResources true
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
         }
         release {
             minifyEnabled true
             shrinkResources true
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
         }
     }
     namespace 'com.graffity.ar_viewer'
@@ -82,7 +84,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.7.7'
     implementation 'com.google.android.material:material:1.11.0'
-    implementation 'com.graffity.android:arcloud:4.2.9'
+    implementation 'com.graffity.android:arcloud:4.4.1'
 
     // Temp for testing local package
 //    implementation project(':arcloud')
